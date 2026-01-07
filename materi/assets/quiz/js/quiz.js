@@ -1,86 +1,124 @@
 (() => {
   const questions = [
     {
-      q: "Emisi adalah…",
+      q: "Apa itu Emisi?",
       choices: [
+        "Udara segar dari pohon",
+        "Gas atau asap yang keluar ke udara akibat kegiatan manusia",
         "Air hujan",
-        "Gas/asap dari aktivitas manusia",
         "Angin sepoi-sepoi",
-        "Suara kendaraan",
       ],
       a: 1,
       explain:
-        "Emisi biasanya adalah gas atau asap yang keluar dari kegiatan manusia.",
+        "Emisi adalah gas atau partikel yang dilepaskan ke udara dari aktivitas manusia seperti kendaraan, pabrik, dan pembakaran.",
     },
     {
-      q: "Salah satu sumber emisi adalah…",
-      choices: ["Pohon", "Kendaraan bermotor", "Air laut", "Buah-buahan"],
+      q: "Contoh emisi di sekitar kita adalah…",
+      choices: [
+        "Menanam bunga",
+        "Asap dari kendaraan bermotor",
+        "Udara pagi",
+        "Air minum",
+      ],
       a: 1,
+      explain:
+        "Asap kendaraan bermotor mengandung partikel dan gas yang termasuk emisi yang mencemari udara.",
     },
     {
-      q: "Cara mengurangi emisi yang mudah adalah…",
+      q: "Asap dari pembakaran sampah termasuk emisi karena…",
+      choices: [
+        "Mengandung gas berbahaya",
+        "Membuat taman indah",
+        "Membersihkan udara",
+        "Menyegarkan lingkungan",
+      ],
+      a: 0,
+      explain:
+        "Pembakaran sampah melepaskan gas beracun dan partikel yang berbahaya bagi kesehatan dan lingkungan.",
+    },
+    {
+      q: "Lampu yang dibiarkan menyala lama dapat menyebabkan emisi karena…",
+      choices: [
+        "Menghemat listrik",
+        "Menghasilkan lebih banyak CO₂",
+        "Membuat ruangan terang",
+        "Tidak berpengaruh",
+      ],
+      a: 1,
+      explain:
+        "Pemakaian listrik yang tinggi sering kali berarti pembangkitan listrik lebih besar, yang dapat meningkatkan emisi CO₂ dari sumber energi fosil.",
+    },
+    {
+      q: "Gas rumah kaca berfungsi untuk…",
+      choices: [
+        "Membuat Bumi tetap hangat",
+        "Membuat Bumi beku",
+        "Membersihkan udara",
+        "Menghilangkan awan",
+      ],
+      a: 0,
+      explain:
+        "Gas rumah kaca memerangkap panas di atmosfer sehingga membantu menjaga suhu Bumi tetap hangat; namun kelebihannya menyebabkan pemanasan berlebih.",
+    },
+    {
+      q: "Jika gas rumah kaca terlalu banyak, maka…",
+      choices: [
+        "Bumi menjadi lebih dingin",
+        "Bumi menjadi terlalu panas",
+        "Hujan berhenti",
+        "Tidak terjadi apa-apa",
+      ],
+      a: 1,
+      explain:
+        "Kelebihan gas rumah kaca meningkatkan efek rumah kaca sehingga suhu rata‑rata Bumi naik (pemanasan global).",
+    },
+    {
+      q: "Emisi yang berlebihan dapat menyebabkan…",
+      choices: [
+        "Udara lebih bersih",
+        "Lingkungan sehat",
+        "Pencemaran udara",
+        "Alam semakin hijau",
+      ],
+      a: 2,
+      explain:
+        "Emisi berlebih menimbulkan polusi udara yang merugikan kesehatan manusia, hewan, dan tumbuhan.",
+    },
+    {
+      q: "Manakah kegiatan yang menghasilkan emisi?",
+      choices: [
+        "Bersepeda",
+        "Menanam pohon",
+        "Mengendarai motor",
+        "Mematikan lampu",
+      ],
+      a: 2,
+      explain:
+        "Mengendarai motor menggunakan bahan bakar fosil yang menghasilkan gas buang berupa emisi.",
+    },
+    {
+      q: "Emisi paling sering berasal dari…",
+      choices: [
+        "Hewan peliharaan",
+        "Kegiatan manusia seperti transportasi dan listrik",
+        "Bunga",
+        "Air laut",
+      ],
+      a: 1,
+      explain:
+        "Sumber utama emisi adalah aktivitas manusia seperti transportasi, pembangkit listrik, dan industri.",
+    },
+    {
+      q: "Cara mengurangi emisi adalah…",
       choices: [
         "Membakar sampah",
         "Menghemat listrik",
-        "Membuang sampah di sungai",
-        "Memotong pohon",
-      ],
-      a: 1,
-    },
-    {
-      q: "Apa yang dibuat saat bahan bakar dibakar?",
-      choices: ["Air bersih", "Asap dan gas", "Batu", "Es"],
-      a: 1,
-    },
-    {
-      q: "Mengapa emisi berbahaya?",
-      choices: [
-        "Membuat udara kotor",
-        "Membuat air menjadi manis",
-        "Menambah kecerahan matahari",
-        "Membuat bunyi band",
-      ],
-      a: 0,
-    },
-    {
-      q: "Salah satu tindakan ramah lingkungan adalah…",
-      choices: [
-        "Menggunakan kendaraan bersama",
+        "Menyalakan AC terus",
         "Membuang sampah sembarangan",
-        "Membiarkan lampu menyala terus",
-        "Membakar daun",
       ],
-      a: 0,
-    },
-    {
-      q: "Gas rumah kaca yang umum disebut adalah…",
-      choices: ["Oksigen", "Karbon dioksida (CO₂)", "Nitrogen murni", "Air"],
       a: 1,
-    },
-    {
-      q: "Kuis ini ditujukan untuk usia…",
-      choices: ["Balita", "SD kelas 5–6", "Dewasa", "Mahasiswa"],
-      a: 1,
-    },
-    {
-      q: "Emisi dapat dikurangi dengan…",
-      choices: [
-        "Berjalan kaki atau bersepeda",
-        "Meningkatkan pembakaran",
-        "Menebang pohon",
-        "Menggunakan plastik sekali pakai",
-      ],
-      a: 0,
-    },
-    {
-      q: "Aksi kecil yang membantu bumi adalah…",
-      choices: [
-        "Menghemat listrik",
-        "Membuang sampah di sungai",
-        "Tidak peduli lingkungan",
-        "Meninggalkan lampu menyala",
-      ],
-      a: 0,
+      explain:
+        "Menghemat listrik mengurangi kebutuhan energi dan emisi dari pembangkit listrik, sehingga membantu menurunkan emisi.",
     },
   ];
 
@@ -102,18 +140,17 @@
     audioToggle: document.getElementById("audioToggle"),
   };
 
-  const bgAudio = document.getElementById('bgAudio');
+  const bgAudio = document.getElementById("bgAudio");
 
   function setBg(on) {
     audioOn = !!on;
     try {
       if (bgAudio) {
-        if (audioOn) bgAudio.play().catch(()=>{});
+        if (audioOn) bgAudio.play().catch(() => {});
         else bgAudio.pause();
       }
     } catch (e) {}
   }
-  
 
   function render() {
     els.progressText.textContent = `${idx + 1} / ${total}`;
@@ -154,9 +191,9 @@
       x.classList.remove("selected")
     );
     btn.classList.add("selected");
-      answers[idx] = i;
-      localStorage.setItem("gm_quiz_answers", JSON.stringify(answers));
-      els.next.disabled = false;
+    answers[idx] = i;
+    localStorage.setItem("gm_quiz_answers", JSON.stringify(answers));
+    els.next.disabled = false;
   }
 
   function next() {
@@ -184,7 +221,7 @@
       if (ok) score++;
       reviewEls.push({ q, qIdx: i, sel: a, ok });
     });
-      showResult(score, reviewEls);
+    showResult(score, reviewEls);
   }
 
   function showResult(score, reviewEls) {
@@ -213,7 +250,7 @@
       els.review.appendChild(div);
     });
 
-      // no effect sounds here — only background music handled by toggle
+    // no effect sounds here — only background music handled by toggle
   }
 
   function retry() {

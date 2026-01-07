@@ -257,7 +257,7 @@
   font-weight: 800;
   letter-spacing: 0.2px;
   line-height: 1.25;
-
+  text-align: justify;
   max-width: 100%;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -270,7 +270,7 @@
   font-size: 0.95rem;
   line-height: 1.55;
   color: var(--muted);
-
+  text-align: justify;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -283,7 +283,7 @@
   white-space: normal; /* JANGAN nowrap */
   word-wrap: break-word;
   overflow-wrap: break-word;
-
+  text-align: justify;
   font-size: 0.85rem;
   font-weight: 700;
   padding: 8px 14px;
@@ -878,6 +878,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+
+.footer-info a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #22a0f6;
 }
 
 .footer-links a {

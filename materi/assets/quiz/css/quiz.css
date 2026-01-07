@@ -225,6 +225,7 @@ body {
   border-radius: 12px;
   font-weight: 800;
   cursor: pointer;
+  text-decoration: none;
 }
 .btn.white {
   background: transparent;
@@ -488,6 +489,12 @@ button.primary:not(:disabled):hover {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+
+.footer-info a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #22a0f6;
 }
 
 .footer-links a {

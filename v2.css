@@ -702,6 +702,12 @@ a.btn:focus {
   font-size: 0.95rem;
 }
 
+.footer-info a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #22a0f6;
+}
+
 .footer-links,
 .footer-info {
   display: flex;
