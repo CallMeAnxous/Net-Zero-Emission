@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daftar Materi — GreenMind Web</title>
+
+    <!-- CSS utama (TIDAK DIUBAH) -->
+    <link rel="stylesheet" href="../../../v2.css" />
+
+    <!-- =================================================
+       CSS KHUSUS DAFTAR MATERI (AMAN & TERISOLASI)
+       TIDAK MERUSAK HALAMAN LAIN
+  ================================================== -->
+    <style>
+      /* jarak antara panel dan grid */
+      .daftar-materi {
+        margin-top: 2rem;
+      }
+
+      /* pastikan tinggi card seragam */
+      .daftar-materi.card-grid {
+        align-items: stretch;
+      }
+
+      /* kunci struktur card */
+      .daftar-materi .card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* dorong tombol ke bawah */
+      .daftar-materi .card-actions {
+        margin-top: auto;
+        display: flex;
+        gap: 0.6rem;
+      }
+
+      /* samakan tinggi & lebar tombol */
+      .daftar-materi .btn {
+        height: 44px;
+        min-width: 130px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+      }
+
+      /* mobile tetap rapi */
+      @media (max-width: 768px) {
+        .daftar-materi .card-actions {
+          flex-direction: column;
+        }
+
+        .daftar-materi .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="ambient-layer"></div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Brand -->
+        <a href="../../../v2.html" class="brand">
+          <img
+            src="../../../assets/img/logo.png"
+            alt="GreenMind Web"
+            class="logo-img"
+          />
+          <div class="brand-text">
+            <strong>GreenMind Web</strong>
+            <span>Pahlawan Bumi Kecil</span>
+          </div>
+        </a>
+
+        <!-- Right Actions -->
+        <div class="header-actions">
+          <!-- Burger -->
+          <button class="nav-toggle" aria-label="Buka menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <a href="../../../v2.html" class="nav-link">Beranda</a>
+          <a data-route="materials" href="daftar_materi.html" class="nav-link"
+            >Materi</a
+          >
+          <a href="#" class="nav-link" id="nav-about" data-modal="about"
+            >Tentang</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Modal: Tentang (About) -->
+    <div
+      class="modal-overlay"
+      id="aboutModal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="aboutTitle"
+    >
+      <div class="modal" role="document">
+        <button class="modal-close" id="aboutClose" aria-label="Tutup">
+          ×
+        </button>
+        <h2 id="aboutTitle">Tentang GreenMind Web</h2>
+
+        <div class="modal-tabs" role="tablist" aria-label="Tab Tentang">
+          <button
+            class="tab active"
+            data-tab="purpose"
+            role="tab"
+            aria-selected="true"
+          >
+            Tujuan
+          </button>
+          <button
+            class="tab"
+            data-tab="target"
+            role="tab"
+            aria-selected="false"
+          >
+            Target
+          </button>
+          <button class="tab" data-tab="hopes" role="tab" aria-selected="false">
+            Harapan
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="tab-panel" data-panel="purpose">
+            <p>
+              <strong>GreenMind Web</strong> adalah platform edukasi interaktif
+              yang dirancang untuk memperkenalkan konsep lingkungan dan Net Zero
+              dengan cara yang menyenangkan dan mudah dipahami. Melalui
+              kombinasi materi singkat, ilustrasi, kuis, dan permainan,
+              anak-anak belajar mengapa tindakan sederhana sehari-hari penting
+              bagi masa depan bumi.
+            </p>
+            <ul>
+              <li>
+                Menyajikan materi ringkas dan visual untuk memudahkan pemahaman.
+              </li>
+              <li>
+                Mendorong pengalaman belajar aktif melalui kuis dan game
+                edukasi.
+              </li>
+              <li>
+                Menghubungkan pengetahuan dengan tindakan nyata yang bisa
+                dilakukan sehari-hari.
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" data-panel="target" hidden>
+            <p>
+              Target utama kami adalah anak usia sekolah dasar hingga remaja,
+              serta pendidik dan orang tua yang mencari sumber belajar praktis
+              dan interaktif. Konten dibuat ramah usia, inklusif, dan mudah
+              disesuaikan untuk kegiatan belajar di kelas atau di rumah.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-panel="hopes" hidden>
+            <p>
+              Kami berharap setiap pengguna memperoleh pemahaman dasar tentang
+              langkah-langkah sederhana yang dapat mengurangi dampak lingkungan,
+              mengembangkan kebiasaan ramah lingkungan, dan terinspirasi untuk
+              membagikan pengetahuan ini di komunitasnya. Juga berharap materi
+              ini menjadi titik awal proyek sekolah dan diskusi keluarga yang
+              bermakna.
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn white" id="close2">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= MAIN ================= -->
+    <main id="app">
+      <!-- INTRO -->
+      <section class="panel">
+        <h2>📘 Daftar Materi Pembelajaran</h2>
+        <p>
+          Pilih materi yang ingin kamu pelajari. Setiap materi berisi cerita,
+          penjelasan sederhana, dan kuis seru untuk menguji pemahamanmu.
+        </p>
+      </section>
+
+      <!-- ================= CARD GRID ================= -->
+      <section class="card-grid daftar-materi">
+        <article class="card">
+          <h3>01. Apa Itu Emisi?</h3>
+          <p>Mari berkenalan dengan emisi dan lingkungan di sekitar kita.</p>
+          <span class="status">Sudah dipelajari</span>
+          <div class="card-actions">
+            <a href="materi.html" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>02. Pemanasan Global</h3>
+          <p>Mengapa bumi terasa makin panas dan apa dampaknya.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>03. Gas Rumah Kaca</h3>
+          <p>Efek selimut bumi dan jenis gas yang menahan panas.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>04. Aktivitas Manusia Penyebab Emisi</h3>
+          <p>Kebiasaan sehari-hari yang berdampak pada lingkungan.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>05. Energi dan Sumber Energi Bersih</h3>
+          <p>Perbedaan energi fosil dan energi terbarukan.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>06. Konsep Dasar Net Zero Emission</h3>
+          <p>Bagaimana cara menyeimbangkan emisi hingga nol.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>07. Gaya Hidup Ramah Lingkungan</h3>
+          <p>Kebiasaan kecil dengan dampak besar bagi bumi.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>08. Pengelolaan Sampah & Daur Ulang</h3>
+          <p>3R: Reduce, Reuse, dan Recycle.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>09. Menanam Pohon & Peran Tanaman</h3>
+          <p>Pohon sebagai penyerap karbon alami.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn" role="button">📖 Baca Materi</a>
+            <a href="#" class="btn secondary" role="button">📝 Mulai Kuis</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>10. Aksi Net Zero Sehari-hari</h3>
+          <p>Tantangan dan aksi sederhana untuk anak.</p>
+          <span class="status unread">Belum dipelajari</span>
+          <div class="card-actions">
+            <a href="#" class="btn">📖 Baca Materi</a>
+            <a href="#" class="btn secondary">📝 Mulai Kuis</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <strong>GreenMind Web</strong>
+          <p>
+            Platform belajar seru untuk anak-anak yang ingin menjaga bumi dan
+            masa depan lingkungan 🌍
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links">
+          <strong>Navigasi</strong>
+          <a href="../../../v2.html">Beranda</a>
+          <a data-route="materials" href="daftar_materi.html">Materi</a>
+          <a href="#" data-modal="about">Tentang</a>
+          <a href="../../../game/game.html">Game Edukasi</a>
+        </div>
+
+        <!-- Info -->
+        <div class="footer-info">
+          <strong>Dukung Kami</strong>
+          <p>Belajar bersama, bertindak bersama.</p>
+          <small>© 2025 GreenMind Web</small>
+          <small
+            >Made by
+            <a href="https://polmind.ac.id/" target="_blank">Politeknik Mitra Industri</a></small
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- GSAP (used for modal animation). Fallback handled in script. -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+    <script>
+      (() => {
+        const toggle = document.querySelector(".nav-toggle");
+        const nav = document.querySelector(".main-nav");
+
+        if (toggle && nav) {
+          toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+          });
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        const triggers = Array.from(
+          document.querySelectorAll('[data-modal="about"]')
+        );
+        const modal = document.getElementById("aboutModal");
+        const closeBtn = document.getElementById("aboutClose");
+        const closeBtn2 = document.getElementById("close2");
+        const learnMore = document.getElementById("learnMore");
+        const tabs = Array.from(document.querySelectorAll(".modal-tabs .tab"));
+        const panels = Array.from(document.querySelectorAll(".tab-panel"));
+
+        if (!modal || !triggers.length) return;
+
+        function openModal() {
+          modal.setAttribute("aria-hidden", "false");
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden";
+          const inner = modal.querySelector(".modal");
+          if (typeof gsap !== "undefined") {
+            gsap.fromTo(
+              inner,
+              { y: 24, opacity: 0, scale: 0.98 },
+              { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" }
+            );
+          } else {
+            inner.style.opacity = 1;
+            inner.style.transform = "translateY(0) scale(1)";
+          }
+          // focus first tabbable
+          setTimeout(() => {
+            const btn = modal.querySelector(".tab");
+            if (btn) btn.focus();
+          }, 250);
+          document.addEventListener("keydown", onKey);
+        }
+
+        function closeModal() {
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+          const inner = modal.querySelector(".modal");
+          if (typeof gsap !== "undefined") {
+            gsap.to(inner, {
+              y: 12,
+              opacity: 0,
+              scale: 0.98,
+              duration: 0.28,
+              ease: "power2.in",
+              onComplete() {
+                modal.style.display = "none";
+              },
+            });
+          } else {
+            modal.style.display = "none";
+          }
+          document.removeEventListener("keydown", onKey);
+        }
+
+        function onKey(e) {
+          if (e.key === "Escape") closeModal();
+          // simple Tab trap
+          if (e.key === "Tab") {
+            const focusables = modal.querySelectorAll(
+              'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
+
+        triggers.forEach((btn) => {
+          btn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            openModal();
+          });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+        if (closeBtn2) closeBtn2.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+
+        // Tabs interaksi
+        tabs.forEach((t) => {
+          t.addEventListener("click", () => {
+            const key = t.getAttribute("data-tab");
+            tabs.forEach((x) => {
+              x.classList.toggle("active", x === t);
+              x.setAttribute("aria-selected", x === t ? "true" : "false");
+            });
+            panels.forEach((p) => {
+              const show = p.getAttribute("data-panel") === key;
+              if (show) {
+                p.hidden = false;
+                gsap.fromTo(
+                  p,
+                  { y: 8, opacity: 0 },
+                  { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }
+                );
+              } else {
+                p.hidden = true;
+              }
+            });
+          });
+        });
+
+        learnMore &&
+          learnMore.addEventListener("click", () => {
+            // contoh: scroll ke bagian materi atau buka halaman baru
+            closeModal();
+            const el = document.querySelector('[data-route="materials"]');
+            if (el) el.click();
+          });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+/* ================= MODAL (Tentang) ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 23, 18, 0.55);
+  z-index: 2200;
+  padding: 2rem;
+}
+
+.modal-overlay[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal {
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff, #f7fffb);
+  border-radius: 16px;
+  padding: 1.4rem 1.4rem 1rem;
+  box-shadow: 0 20px 60px rgba(3, 25, 16, 0.35);
+  position: relative;
+  border: 4px solid rgba(174, 224, 255, 0.18);
+  font-family: "Nunito", "Baloo 2", system-ui, sans-serif;
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: #184f3b;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+
+.modal h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #0f5132;
+}
+
+/* Modal-specific button styles to avoid collisions with page stylesheet */
+.modal .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, #22c55e, #38bdf8);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 14px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 0 rgba(31, 158, 87, 0.12);
+}
+.modal .btn.white {
+  background: transparent;
+  color: #0f5132;
+  border: 2px solid rgba(20, 83, 45, 0.06);
+  box-shadow: none;
+}
+.modal .btn.secondary {
+  background: #38bdf8;
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.6rem 0 0.8rem 0;
+}
+.modal-tabs .tab {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: #f1faf4;
+  border: 2px solid rgba(98, 195, 112, 0.12);
+  font-weight: 800;
+  cursor: pointer;
+}
+.modal-tabs .tab.active {
+  background: linear-gradient(90deg, #22c55e, #38bdf8);
+  color: #fff;
+  border-color: transparent;
+}
+
+.modal-body {
+  max-height: 48vh;
+  overflow: auto;
+  padding-right: 8px;
+  text-align: justify;
+  hyphens: auto;
+}
+.tab-panel {
+  font-weight: 700;
+  color: #234d3e;
+}
+.tab-panel p {
+  margin: 0 0 0.6rem 0;
+  text-align: justify;
+}
+.tab-panel ul {
+  margin: 0.25rem 0 0.6rem 1.1rem;
+  text-align: justify;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+.modal .btn.white {
+  background: transparent;
+  color: #0f5132;
+  border: 2px solid rgba(20, 83, 45, 0.06);
+  box-shadow: none;
+}
+
+@media (max-width: 390px) {
+  .modal {
+    padding: 1rem;
+  }
+  .modal h2 {
+    font-size: 1.05rem;
+  }
+  .modal-tabs {
+    gap: 0.35rem;
+  }
+  .modal-tabs .tab {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra explicit breakpoints to ensure close button stays top-right
+   across many device widths (phones / small tablets) */
+@media (max-width: 1280px) {
+  .modal-close {
+    right: 1px;
+    top: 1px;
+  }
+}
+@media (max-width: 1024px) {
+  .modal-close {
+    right: 0px;
+    top: 0px;
+  }
+}
+@media (max-width: 900px) {
+  .modal-close {
+    right: 1px;
+    top: -2px;
+  }
+}
+@media (max-width: 768px) {
+  .modal-close {
+    right: 1px;
+    top: -4px;
+  }
+}
+@media (max-width: 600px) {
+  .modal-close {
+    right: 1px;
+    top: 1px;
+  }
+}
+@media (max-width: 480px) {
+  .modal-close {
+    right: 2px;
+    top: 1px;
+  }
+}
+@media (max-width: 420px) {
+  .modal-close {
+    right: 1px;
+    top: -3px;
+  }
+}
+@media (max-width: 390px) {
+  .modal-close {
+    right: -3px;
+    top: -4px;
+  }
+}
+@media (max-width: 360px) {
+  .modal-close {
+    right: -3px;
+    top: -4px;
+  }
+}
+@media (max-width: 320px) {
+  .modal-close {
+    right: 6px;
+    top: 6px;
+  }
+}

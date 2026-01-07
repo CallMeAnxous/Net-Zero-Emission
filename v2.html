@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GreenMind Web — Pahlawan Bumi Kecil</title>
+    <link rel="stylesheet" href="v2.css" />
+  </head>
+  <body>
+    <div id="ambient-layer"></div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Brand -->
+        <a href="v2.html" class="brand">
+          <img src="assets/img/logo.png" alt="GreenMind Web" class="logo-img" />
+          <div class="brand-text">
+            <strong>GreenMind Web</strong>
+            <span>Pahlawan Bumi Kecil</span>
+          </div>
+        </a>
+
+        <!-- Right Actions -->
+        <div class="header-actions">
+          <!-- Burger -->
+          <button class="nav-toggle" aria-label="Buka menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <a href="#" class="nav-link">Beranda</a>
+          <a
+            data-route="materials"
+            href="materi/assets/views/daftar_materi.html"
+            class="nav-link"
+            >Materi</a
+          >
+          <a href="#" class="nav-link" id="nav-about" data-modal="about"
+            >Tentang</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Modal: Tentang (About) -->
+    <div
+      class="modal-overlay"
+      id="aboutModal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="aboutTitle"
+    >
+      <div class="modal" role="document">
+        <button class="modal-close" id="aboutClose" aria-label="Tutup">
+          ×
+        </button>
+        <h2 id="aboutTitle">Tentang GreenMind Web</h2>
+
+        <div class="modal-tabs" role="tablist" aria-label="Tab Tentang">
+          <button
+            class="tab active"
+            data-tab="purpose"
+            role="tab"
+            aria-selected="true"
+          >
+            Tujuan
+          </button>
+          <button
+            class="tab"
+            data-tab="target"
+            role="tab"
+            aria-selected="false"
+          >
+            Target
+          </button>
+          <button class="tab" data-tab="hopes" role="tab" aria-selected="false">
+            Harapan
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="tab-panel" data-panel="purpose">
+            <p>
+              <strong>GreenMind Web</strong> adalah platform edukasi interaktif
+              yang dirancang untuk memperkenalkan konsep lingkungan dan Net Zero
+              dengan cara yang menyenangkan dan mudah dipahami. Melalui
+              kombinasi materi singkat, ilustrasi, kuis, dan permainan,
+              anak-anak belajar mengapa tindakan sederhana sehari-hari penting
+              bagi masa depan bumi.
+            </p>
+            <ul>
+              <li>
+                Menyajikan materi ringkas dan visual untuk memudahkan pemahaman.
+              </li>
+              <li>
+                Mendorong pengalaman belajar aktif melalui kuis dan game
+                edukasi.
+              </li>
+              <li>
+                Menghubungkan pengetahuan dengan tindakan nyata yang bisa
+                dilakukan sehari-hari.
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" data-panel="target" hidden>
+            <p>
+              Target utama kami adalah anak usia sekolah dasar hingga remaja,
+              serta pendidik dan orang tua yang mencari sumber belajar praktis
+              dan interaktif. Konten dibuat ramah usia, inklusif, dan mudah
+              disesuaikan untuk kegiatan belajar di kelas atau di rumah.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-panel="hopes" hidden>
+            <p>
+              Kami berharap setiap pengguna memperoleh pemahaman dasar tentang
+              langkah-langkah sederhana yang dapat mengurangi dampak lingkungan,
+              mengembangkan kebiasaan ramah lingkungan, dan terinspirasi untuk
+              membagikan pengetahuan ini di komunitasnya. Juga berharap materi
+              ini menjadi titik awal proyek sekolah dan diskusi keluarga yang
+              bermakna.
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn white" id="close2">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= MAIN ================= -->
+    <main id="app">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="panel">
+          <h2>🌍 Halo, Pahlawan Bumi!</h2>
+          <p>
+            Yuk belajar menjaga bumi dengan game, cerita, dan kuis seru! Setiap
+            langkahmu membantu bumi jadi lebih sehat 🌱
+          </p>
+
+          <p>
+            Di sini kamu bisa menjelajah dunia hijau, mengenal energi bersih,
+            dan belajar cara sederhana yang bisa kamu lakukan setiap hari.
+          </p>
+
+          <p>
+            Kamu tidak perlu jadi ilmuwan untuk peduli lingkungan. Cukup mulai
+            dari hal kecil, karena perubahan besar selalu dimulai dari anak-anak
+            hebat seperti kamu.
+          </p>
+
+          <div class="card-actions">
+            <button class="btn primary">🚀 Mulai Petualangan</button>
+            <button class="btn secondary">
+              <a
+                data-route="materials"
+                href="materi/assets/views/daftar_materi.html"
+                class="btn-secondary"
+                >📘 Lihat Materi</a
+              >
+            </button>
+          </div>
+        </div>
+
+        <!-- HERO ILLUSTRATION -->
+        <section class="hero-illustration" id="hero">
+          <!-- BACKGROUND ANIMATION -->
+          <canvas id="bgParticles"></canvas>
+
+          <div class="hero-bg"></div>
+
+          <svg class="energy-rings" viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="120" />
+            <circle cx="200" cy="200" r="160" />
+            <circle cx="200" cy="200" r="200" />
+          </svg>
+
+          <div class="earth-wrapper">
+            <div class="earth"></div>
+          </div>
+
+          <div class="hero-text">
+            <h2>Energi Kecil, Dampak Besar</h2>
+            <p>Setiap aksi kecilmu membantu masa depan bumi</p>
+          </div>
+        </section>
+
+        <!-- GSAP -->
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+      </section>
+
+      <!-- PROGRESS -->
+      <section class="progress-card">
+        <h3>⭐ Progress Kamu</h3>
+
+        <div class="progress-grid">
+          <div class="progress-item">
+            <span class="progress-label">Materi Dibaca</span>
+            <span class="progress-value">2 / 10</span>
+          </div>
+          <div class="progress-item">
+            <span class="progress-label">Kuis Diselesaikan</span>
+            <span class="progress-value">1 / 5</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 30%"></div>
+        </div>
+
+        <p class="progress-tip">Hebat! Teruskan ya, Pahlawan 💪🌍</p>
+      </section>
+
+      <!-- MATERI -->
+      <section class="card-grid">
+        <div class="card">
+          <h3>⭐ Apa Itu Net Zero?</h3>
+          <p>Belajar cara mengurangi polusi dengan langkah kecil.</p>
+          <span class="status">Sudah Dibaca</span>
+          <div class="card-actions">
+            <button class="btn">📖 Baca</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>⭐ Energi Matahari</h3>
+          <p>Matahari bisa jadi listrik, lho! ☀️</p>
+          <span class="status unread">Belum Dibaca</span>
+          <div class="card-actions">
+            <button class="btn">📖 Baca</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>⭐ Jaga Lingkungan</h3>
+          <p>Aksi kecilmu sangat berarti 🌱</p>
+          <span class="status unread">Belum Dibaca</span>
+          <div class="card-actions">
+            <button class="btn">📖 Baca</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA GAME -->
+      <section class="game-cta">
+        <div class="game-cta-card">
+          <h2>🎮 Mainkan Game Edukasi!</h2>
+          <p>
+            Tangkap sampah, jawab kuis, dan bantu bumi menjadi lebih bersih.
+            Siap jadi Pahlawan Bumi Kecil?
+          </p>
+
+          <a href="game/game.html" class="btn-game"> ▶️ Mainkan Eco Catcher </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <strong>GreenMind Web</strong>
+          <p>
+            Platform belajar seru untuk anak-anak yang ingin menjaga bumi dan
+            masa depan lingkungan 🌍
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links">
+          <strong>Navigasi</strong>
+          <a href="v2.html">Beranda</a>
+          <a data-route="materials" href="materi/assets/views/daftar_materi.html">Materi</a>
+          <a href="#" data-modal="about">Tentang</a>
+          <a href="game/game.html">Game Edukasi</a>
+        </div>
+
+        <!-- Info -->
+        <div class="footer-info">
+          <strong>Dukung Kami</strong>
+          <p>Belajar bersama, bertindak bersama.</p>
+          <small>© 2025 GreenMind Web</small>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      /* initial states */
+      gsap.set(".earth-core", { scale: 0, opacity: 0 });
+      gsap.set(".hero-text h2, .hero-text p", { y: 20, opacity: 0 });
+      gsap.set(".energy-rings circle", {
+        strokeDasharray: 1000,
+        strokeDashoffset: 1000,
+      });
+
+      /* animation */
+      tl.to(".earth-core", {
+        scale: 1,
+        opacity: 1,
+        duration: 1.4,
+      })
+        .to(
+          ".energy-rings circle",
+          {
+            strokeDashoffset: 0,
+            duration: 2,
+            stagger: 0.2,
+          },
+          "-=1"
+        )
+        .to(
+          ".hero-text h2",
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+          },
+          "-=.8"
+        )
+        .to(
+          ".hero-text p",
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+          },
+          "-=.6"
+        );
+
+      (() => {
+        const earth = document.querySelector(".earth");
+        if (!earth) return;
+
+        let lon = 0; // longitude (360° bebas)
+        let lat = 0; // latitude (dibatasi)
+        let isDragging = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        const MAX_LAT = 60; // batas realistis (kutub tidak terbalik)
+
+        /* ================= AUTO ROTATE ================= */
+        let autoSpeed = 0.09; // kecepatan rotasi otomatis
+        let autoEnabled = true;
+
+        function autoRotate() {
+          if (autoEnabled && !isDragging) {
+            lon += autoSpeed;
+          }
+        }
+
+        /* ================= UPDATE TEXTURE ================= */
+        function render() {
+          // longitude 0–360
+          const x = ((lon % 360) + 360) % 360;
+          // latitude -60 → 60 dipetakan ke 30%–70%
+          const y = 50 - (lat / MAX_LAT) * 20;
+
+          earth.style.backgroundPosition = `${x}% ${y}%`;
+        }
+
+        /* ================= DRAG HANDLER ================= */
+        function onDown(x, y) {
+          isDragging = true;
+          autoEnabled = false;
+          lastX = x;
+          lastY = y;
+          earth.style.cursor = "grabbing";
+        }
+
+        function onMove(x, y) {
+          if (!isDragging) return;
+
+          const dx = x - lastX;
+          const dy = y - lastY;
+          lastX = x;
+          lastY = y;
+
+          lon -= dx * 0.3; // kiri–kanan = rotasi
+          lat += dy * 0.2; // atas–bawah = tilt
+
+          lat = Math.max(-MAX_LAT, Math.min(MAX_LAT, lat));
+        }
+
+        function onUp() {
+          isDragging = false;
+          earth.style.cursor = "grab";
+
+          // lanjutkan auto-rotate setelah 1.5 detik
+          setTimeout(() => (autoEnabled = true), 1500);
+        }
+
+        /* ================= MOUSE ================= */
+        earth.addEventListener("mousedown", (e) =>
+          onDown(e.clientX, e.clientY)
+        );
+        window.addEventListener("mousemove", (e) =>
+          onMove(e.clientX, e.clientY)
+        );
+        window.addEventListener("mouseup", onUp);
+
+        /* ================= TOUCH ================= */
+        earth.addEventListener("touchstart", (e) => {
+          const t = e.touches[0];
+          onDown(t.clientX, t.clientY);
+        });
+
+        window.addEventListener("touchmove", (e) => {
+          if (!isDragging) return;
+          const t = e.touches[0];
+          onMove(t.clientX, t.clientY);
+        });
+
+        window.addEventListener("touchend", onUp);
+
+        /* ================= LOOP ================= */
+        function loop() {
+          autoRotate();
+          render();
+          requestAnimationFrame(loop);
+        }
+
+        loop();
+      })();
+
+      /* Floating planet */
+      gsap.to(".earth-wrapper", {
+        y: -14,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      /* rotate rings */
+      gsap.to(".energy-rings circle", {
+        rotation: 360,
+        transformOrigin: "50% 50%",
+        duration: 40,
+        repeat: -1,
+        ease: "none",
+      });
+    </script>
+
+    <script>
+      (() => {
+        const canvas = document.getElementById("bgParticles");
+        if (!canvas) return;
+
+        const ctx = canvas.getContext("2d");
+        let w, h;
+        let mouse = { x: 0.5, y: 0.5 };
+
+        function resize() {
+          w = canvas.width = canvas.offsetWidth;
+          h = canvas.height = canvas.offsetHeight;
+        }
+        window.addEventListener("resize", resize);
+        resize();
+
+        const COLORS = [
+          "rgba(98,195,112,0.6)",
+          "rgba(90,166,232,0.6)",
+          "rgba(255,214,107,0.6)",
+        ];
+
+        const particles = [];
+
+        class Particle {
+          constructor() {
+            this.reset();
+          }
+          reset() {
+            this.x = Math.random() * w;
+            this.y = Math.random() * h;
+            this.size = 1.2 + Math.random() * 2.4;
+            this.speed = 0.2 + Math.random() * 0.6;
+            this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+          }
+          update() {
+            this.y -= this.speed;
+            if (this.y < -10) {
+              this.y = h + 10;
+              this.x = Math.random() * w;
+            }
+          }
+          draw() {
+            ctx.beginPath();
+            ctx.arc(
+              this.x + (mouse.x - 0.5) * 30,
+              this.y + (mouse.y - 0.5) * 20,
+              this.size,
+              0,
+              Math.PI * 2
+            );
+            ctx.fillStyle = this.color;
+            ctx.shadowColor = this.color;
+            ctx.shadowBlur = 8;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+
+        for (let i = 0; i < 160; i++) {
+          particles.push(new Particle());
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, w, h);
+          particles.forEach((p) => {
+            p.update();
+            p.draw();
+          });
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      })();
+    </script>
+
+    <script>
+      (() => {
+        const ambient = document.getElementById("ambient-layer");
+        if (!ambient) return;
+
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        let mouseX = 0.5;
+        let mouseY = 0.5;
+        let scrollY = 0;
+
+        if (!prefersReducedMotion) {
+          window.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX / window.innerWidth;
+            mouseY = e.clientY / window.innerHeight;
+          });
+
+          window.addEventListener("scroll", () => {
+            scrollY = window.scrollY;
+          });
+
+          function animate() {
+            const x = (mouseX - 0.5) * 60;
+            const y = (mouseY - 0.5) * 40 + scrollY * 0.02;
+
+            ambient.style.transform = `
+        translate3d(${x}px, ${y}px, 0)
+      `;
+
+            requestAnimationFrame(animate);
+          }
+
+          animate();
+        }
+      })();
+
+      (() => {
+        const hero = document.querySelector(".hero-illustration");
+        if (!hero) return;
+
+        let t = 0;
+
+        function breathe() {
+          t += 0.002;
+          const scale = 1 + Math.sin(t) * 0.003;
+
+          hero.style.transform = `scale(${scale})`;
+          requestAnimationFrame(breathe);
+        }
+
+        breathe();
+      })();
+    </script>
+
+    <script>
+      gsap.from(".panel", {
+        y: 40,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+
+      gsap.from(".panel .btn", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        delay: 0.8,
+        ease: "power3.out",
+      });
+    </script>
+    <!-- Load application logic (integrates the SPA behavior in app.js) -->
+    <script src="app.js"></script>
+    <script>
+      (() => {
+        const toggle = document.querySelector(".nav-toggle");
+        const nav = document.querySelector(".main-nav");
+
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      })();
+    </script>
+    <script>
+      (function () {
+        const triggers = Array.from(document.querySelectorAll('[data-modal="about"]'));
+        const modal = document.getElementById("aboutModal");
+        const closeBtn = document.getElementById("aboutClose");
+        const closeBtn2 = document.getElementById("close2");
+        const learnMore = document.getElementById("learnMore");
+        const tabs = Array.from(document.querySelectorAll(".modal-tabs .tab"));
+        const panels = Array.from(document.querySelectorAll(".tab-panel"));
+
+        if (!modal || !triggers.length) return;
+
+        function openModal() {
+          modal.setAttribute("aria-hidden", "false");
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden";
+          gsap.fromTo(
+            modal.querySelector(".modal"),
+            { y: 24, opacity: 0, scale: 0.98 },
+            { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" }
+          );
+          // focus first tabbable
+          setTimeout(() => {
+            const btn = modal.querySelector(".tab");
+            if (btn) btn.focus();
+          }, 250);
+          document.addEventListener("keydown", onKey);
+        }
+
+        function closeModal() {
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+          gsap.to(modal.querySelector(".modal"), {
+            y: 12,
+            opacity: 0,
+            scale: 0.98,
+            duration: 0.28,
+            ease: "power2.in",
+            onComplete() {
+              modal.style.display = "none";
+            },
+          });
+          document.removeEventListener("keydown", onKey);
+        }
+
+        function onKey(e) {
+          if (e.key === "Escape") closeModal();
+          // simple Tab trap
+          if (e.key === "Tab") {
+            const focusables = modal.querySelectorAll(
+              'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
+
+        triggers.forEach((btn) => {
+          btn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            openModal();
+          });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+        if (closeBtn2) closeBtn2.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+
+        // Tabs interaksi
+        tabs.forEach((t) => {
+          t.addEventListener("click", () => {
+            const key = t.getAttribute("data-tab");
+            tabs.forEach((x) => {
+              x.classList.toggle("active", x === t);
+              x.setAttribute("aria-selected", x === t ? "true" : "false");
+            });
+            panels.forEach((p) => {
+              const show = p.getAttribute("data-panel") === key;
+              if (show) {
+                p.hidden = false;
+                gsap.fromTo(
+                  p,
+                  { y: 8, opacity: 0 },
+                  { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }
+                );
+              } else {
+                p.hidden = true;
+              }
+            });
+          });
+        });
+
+        learnMore &&
+          learnMore.addEventListener("click", () => {
+            // contoh: scroll ke bagian materi atau buka halaman baru
+            closeModal();
+            const el = document.querySelector('[data-route="materials"]');
+            if (el) el.click();
+          });
+      })();
+    </script>
+  </body>
+</html>

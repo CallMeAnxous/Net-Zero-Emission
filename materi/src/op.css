@@ -1,0 +1,7 @@
+body{font-family:Arial;background:#e9fff3;margin:0}
+.wrap{max-width:1000px;margin:auto;padding:20px}
+.nav{display:flex;justify-content:space-between;align-items:center;background:#d1fae5;padding:15px;border-radius:12px}
+.logo{width:40px;height:40px;background:#34d399;border-radius:10px}
+.card{background:#fff;margin-top:20px;padding:15px;border-radius:14px}
+.btn{padding:10px 14px;background:#60a5fa;color:#fff;border-radius:10px;text-decoration:none}
+.btn.primary{background:#22c55e}

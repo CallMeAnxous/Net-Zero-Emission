@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eco Catcher – Misi Net Zero</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <h1>♻️ Eco Catcher</h1>
+        <p class="subtitle">Tangkap sampah untuk progress, hindari bom, jawab kuis dari kertas!</p>
+      </div>
+      <div class="topbar-badges">
+        <span class="badge">💣 Bom = Nyawa -1</span>
+        <span class="badge">📄 Kertas = Kuis</span>
+        <span class="badge">⏱️ Timer</span>
+        <span class="badge">⏸️ P / ESC = Pause</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="game-wrap">
+    <section class="stage">
+      <canvas id="gameCanvas" width="800" height="480"></canvas>
+      <div class="stage-note">
+        <span>Kontrol: ⬅️➡️ / drag</span>
+        <span>Target: progress 100% sebelum waktu habis</span>
+      </div>
+    </section>
+
+    <aside class="hud">
+      <div class="panel">
+        <div class="rows">
+          <div class="row"><span class="label">Skor</span><span id="score" class="value">0</span></div>
+          <div class="row"><span class="label">Nyawa</span><span id="lives" class="value">❤️❤️❤️</span></div>
+          <div class="row"><span class="label">Waktu</span><span id="timeText" class="value">60s</span></div>
+          <div class="row"><span class="label">Level</span><span id="levelText" class="value">1 / 5</span></div>
+          <div class="row">
+  <span class="label">Soal</span>
+  <span id="quizCount" class="value">0 / 0</span>
+</div>
+
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-head">
+            <span class="progress-label">Net Zero Progress</span>
+            <span id="progressValue" class="progress-value">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill" style="width:0%"></div>
+          </div>
+          <p class="hint">Sampah jatuh tidak apa-apa ✅ (yang bahaya: bom)</p>
+        </div>
+
+        <div class="level-picker">
+          <label for="levelSelect">Pilih Level (dipakai saat mulai):</label>
+          <select id="levelSelect">
+            <option value="1">Level 1 (Santai)</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+            <option value="4">Level 4</option>
+            <option value="5">Level 5 (Sulit)</option>
+          </select>
+          <small>Dipakai saat start. Saat main, level tidak auto naik.</small>
+        </div>
+
+        <button id="btnPause" class="btn secondary" type="button">⏸️ Pause</button>
+
+        <div class="rules">
+          <h3>Aturan Cepat</h3>
+          <ul>
+            <li>🗑️ Tangkap sampah → skor + progress</li>
+            <li>💣 Tangkap bom → nyawa -1</li>
+            <li>📄 Tangkap kertas → kuis (benar = bonus progress)</li>
+            <li>⏱️ Waktu habis: progress <b>100%</b> = kalah</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- OVERLAY (START + RESULT) -->
+  <section id="overlay" class="overlay show">
+    <div class="card">
+      <h2 id="overlayTitle">Selamat datang di Eco Catcher!</h2>
+      <p id="overlayDesc" class="lead">
+        Tangkap sampah untuk naik progress. Bom mengurangi nyawa. Kertas memunculkan kuis.
+      </p>
+
+      <!-- START UI -->
+      <div id="startUI" class="start-level">
+        <div class="start-level-head">
+          <span class="start-level-title">Pilih Level</span>
+          <span class="start-level-badge">1–5</span>
+        </div>
+
+        <div class="start-level-select">
+          <select id="startLevel">
+            <option value="1">Level 1 (Santai)</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+            <option value="4">Level 4</option>
+            <option value="5">Level 5 (Sulit)</option>
+          </select>
+        </div>
+
+        <div class="start-level-note">
+          Level makin tinggi → timer makin cepat & bom makin sering.
+        </div>
+
+        <button id="btnStart" class="btn primary" type="button">Mulai Game</button>
+      </div>
+
+      <!-- RESULT UI -->
+      <div id="resultUI" class="result-ui" hidden>
+        <button id="btnRestart" class="btn primary" type="button">Main Lagi</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ OVERLAY -->
+  <section id="quizOverlay" class="overlay">
+    <div class="card quiz-card">
+      <div class="quiz-head">
+        <h2>📄 Kuis Singkat</h2>
+        <span class="quiz-tag">Net Zero</span>
+      </div>
+      <p id="quizQuestion" class="quiz-q"></p>
+      <div id="quizChoices" class="quiz-choices"></div>
+      <p id="quizInfo" class="quiz-info"></p>
+      <button id="quizNextBtn" class="btn primary" disabled type="button">Lanjut</button>
+      <p class="quiz-foot">Tips: Jawaban benar = bonus progress 🌱</p>
+    </div>
+  </section>
+
+  <!-- PAUSE OVERLAY -->
+  <section id="pauseOverlay" class="overlay">
+    <div class="card">
+      <h2>⏸️ Game Dipause</h2>
+      <p class="lead">Tekan <b>P</b> / <b>ESC</b> atau klik tombol di kanan untuk lanjut.</p>
+      <button id="btnResume" class="btn primary" type="button">Lanjutkan</button>
+    </div>
+  </section>
+
+  <footer class="footer">© 2025 Eco Catcher — GreenMind Web</footer>
+  <script src="game.js"></script>
+</body>
+</html>
