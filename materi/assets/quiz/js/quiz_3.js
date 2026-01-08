@@ -1,94 +1,99 @@
 (() => {
   const questions = [
     {
-      q: "Apa tujuan menjaga lingkungan?",
+      q: "Menjaga lingkungan merupakan tanggung jawab bersama. Apa tujuan utama dari menjaga lingkungan?",
       choices: [
-        "Supaya bumi kotor",
+        "Supaya bumi menjadi kotor",
         "Agar lingkungan tetap bersih dan sehat",
-        "Agar sampah menumpuk",
+        "Agar sampah menumpuk di sekitar kita",
+        "Agar alam tidak dapat dimanfaatkan",
       ],
       a: 1,
       explain:
-        "Menjaga lingkungan membuat tempat tinggal, udara, dan air tetap bersih sehingga kesehatan terjaga.",
+        "Menjaga lingkungan bertujuan agar tempat tinggal, udara, dan air tetap bersih sehingga kesehatan manusia dan makhluk hidup lainnya terjaga.",
     },
     {
-      q: "Daur ulang adalah kegiatan …",
+      q: "Daur ulang merupakan salah satu upaya pengelolaan sampah. Daur ulang adalah kegiatan …",
       choices: [
         "Membuang sampah ke sungai",
-        "Mengolah sampah menjadi barang baru",
-        "Membakar sampah",
+        "Mengolah sampah menjadi barang baru atau berguna",
+        "Membakar sampah tanpa pengolahan",
+        "Menumpuk sampah di lingkungan",
       ],
       a: 1,
       explain:
-        "Daur ulang mengubah sampah menjadi bahan berguna lagi sehingga mengurangi limbah dan penggunaan sumber daya baru.",
+        "Daur ulang mengubah sampah menjadi bahan yang dapat digunakan kembali sehingga mengurangi limbah dan penggunaan sumber daya alam baru.",
     },
     {
-      q: "Sampah sisa makanan termasuk sampah …",
-      choices: ["Organik", "Anorganik", "B3"],
+      q: "Sampah yang berasal dari sisa makanan dan mudah membusuk termasuk ke dalam jenis sampah …",
+      choices: ["Organik", "Anorganik", "B3", "Residu"],
       a: 0,
       explain:
-        "Sisa makanan mudah membusuk dan dapat diuraikan secara alami sehingga termasuk sampah organik.",
+        "Sisa makanan dapat terurai secara alami oleh mikroorganisme sehingga termasuk sampah organik.",
     },
     {
-      q: "Botol plastik termasuk jenis sampah …",
-      choices: ["Organik", "Anorganik", "Residu"],
+      q: "Botol plastik yang sering kita gunakan sehari-hari termasuk jenis sampah …",
+      choices: ["Organik", "Anorganik", "B3", "Organik basah"],
       a: 1,
       explain:
-        "Plastik tidak mudah terurai sehingga tergolong sampah anorganik yang perlu didaur ulang atau dikelola.",
+        "Plastik sulit terurai secara alami sehingga tergolong sampah anorganik dan perlu dikelola atau didaur ulang.",
     },
     {
-      q: "Baterai bekas sebaiknya dibuang ke tempat sampah …",
-      choices: ["Organik", "Kertas", "B3"],
+      q: "Baterai bekas mengandung bahan kimia berbahaya. Oleh karena itu, baterai bekas sebaiknya dibuang ke tempat sampah …",
+      choices: ["Organik", "Kertas", "B3", "Residu"],
       a: 2,
       explain:
-        "Baterai mengandung bahan berbahaya (B3) yang harus dibuang di fasilitas khusus agar tidak mencemari lingkungan.",
+        "Baterai termasuk limbah B3 (Bahan Berbahaya dan Beracun) yang harus dikelola secara khusus agar tidak mencemari lingkungan.",
     },
     {
-      q: "Apa arti Reduce dalam 3R?",
+      q: "Dalam konsep 3R, Reduce memiliki arti penting. Apa arti Reduce?",
       choices: [
         "Mengurangi penggunaan barang sekali pakai",
-        "Menggunakan kembali barang",
-        "Mendaur ulang sampah",
+        "Menggunakan kembali barang yang sudah dipakai",
+        "Mendaur ulang sampah menjadi barang baru",
+        "Membuang sampah ke tempat pembuangan akhir",
       ],
       a: 0,
       explain:
-        "Reduce berarti mengurangi konsumsi dan penggunaan barang sekali pakai untuk menekan jumlah sampah.",
+        "Reduce berarti mengurangi konsumsi dan penggunaan barang sekali pakai untuk menekan jumlah sampah sejak awal.",
     },
     {
-      q: "Menggunakan botol minum sendiri adalah contoh …",
-      choices: ["Recycle", "Reduce", "Residu"],
+      q: "Menggunakan botol minum sendiri saat beraktivitas sehari-hari merupakan contoh penerapan …",
+      choices: ["Recycle", "Reduce", "Residu", "B3"],
       a: 1,
       explain:
-        "Menggunakan ulang botol sendiri mengurangi sampah plastik sekali pakai, sehingga termasuk Reduce.",
+        "Menggunakan botol minum sendiri mengurangi penggunaan plastik sekali pakai sehingga termasuk tindakan Reduce.",
     },
     {
-      q: "Kertas bekas termasuk sampah …",
-      choices: ["Kertas", "B3", "Organik"],
+      q: "Kertas bekas yang sudah tidak digunakan lagi termasuk ke dalam kategori sampah …",
+      choices: ["Kertas", "B3", "Organik", "Residu"],
       a: 0,
       explain:
-        "Kertas bekas masuk kategori kertas dan dapat didaur ulang menjadi produk kertas baru.",
+        "Kertas bekas termasuk kategori sampah kertas dan dapat didaur ulang menjadi produk kertas baru.",
     },
     {
-      q: "Manfaat daur ulang bagi lingkungan adalah …",
+      q: "Salah satu manfaat utama dari kegiatan daur ulang bagi lingkungan adalah …",
       choices: [
-        "Sampah semakin banyak",
+        "Jumlah sampah semakin banyak",
         "Lingkungan menjadi lebih bersih",
-        "Udara menjadi kotor",
+        "Udara menjadi lebih kotor",
+        "Kerusakan alam semakin cepat",
       ],
       a: 1,
       explain:
-        "Daur ulang mengurangi sampah yang dibuang dan membantu menjaga kebersihan lingkungan.",
+        "Daur ulang membantu mengurangi jumlah sampah dan menjaga kebersihan serta kelestarian lingkungan.",
     },
     {
-      q: "Siapa yang bertanggung jawab menjaga lingkungan?",
+      q: "Menjaga lingkungan bukan hanya tugas satu pihak. Siapakah yang bertanggung jawab menjaga lingkungan?",
       choices: [
         "Hanya orang dewasa",
         "Pemerintah saja",
+        "Petugas kebersihan",
         "Semua orang, termasuk anak-anak",
       ],
-      a: 2,
+      a: 3,
       explain:
-        "Menjaga lingkungan adalah tugas bersama; semua orang, termasuk anak-anak, bisa berkontribusi.",
+        "Menjaga lingkungan adalah tanggung jawab bersama; setiap orang, termasuk anak-anak, dapat berkontribusi melalui kebiasaan baik.",
     },
   ];
 
@@ -224,6 +229,14 @@
       els.review.appendChild(div);
     });
 
+    // Mark quiz as completed if ProgressManager is available
+    if (typeof ProgressManager !== "undefined") {
+      // Get materi number from URL
+      const params = new URLSearchParams(window.location.search);
+      const materiNumber = parseInt(params.get("materi") || "3", 10) || 3;
+      ProgressManager.markQuizCompleted(materiNumber);
+    }
+
     // no effect sounds here — only background music handled by toggle
   }
 
@@ -256,123 +269,3 @@
   // start background if enabled
   setBg(audioOn);
 })();
-const QUIZ_MATERIALS = [
-  {
-    title: "Apa Itu Emisi?",
-    quiz: [
-      {
-        type: "mc",
-        text: "Lingkungan mencakup...",
-        options: ["Rumah dan sekolah", "Hanya cuaca", "Hanya laut"],
-        answer: 0,
-      },
-      {
-        type: "tf",
-        text: "Cuaca adalah keadaan udara harian.",
-        answer: true,
-      },
-    ],
-  },
-];
-
-const app = document.getElementById("quiz-app");
-const params = new URLSearchParams(location.search);
-const materialIndex = parseInt(params.get("materi") || "0", 10);
-const material = QUIZ_MATERIALS[materialIndex];
-
-let index = 0;
-let score = 0;
-let selected = null;
-
-render();
-
-function render() {
-  const q = material.quiz[index];
-  const progress = Math.round(((index + 1) / material.quiz.length) * 100);
-
-  app.innerHTML = `
-    <section class="quiz-card">
-      <div class="quiz-header">
-        <div class="progress-text">Soal ${index + 1} / ${
-    material.quiz.length
-  }</div>
-        <div>${progress}%</div>
-      </div>
-
-      <div class="progress-bar">
-        <div class="progress-fill" style="width:${progress}%"></div>
-      </div>
-
-      <div class="question">${q.text}</div>
-
-      <div class="options">
-        ${
-          q.type === "mc"
-            ? q.options
-                .map((o, i) => `<div class="option" data-i="${i}">${o}</div>`)
-                .join("")
-            : `
-              <div class="option" data-i="true">Benar</div>
-              <div class="option" data-i="false">Salah</div>
-            `
-        }
-      </div>
-
-      <div class="actions">
-        <button class="primary" id="next" disabled>Soal Berikutnya</button>
-      </div>
-    </section>
-  `;
-
-  document.querySelectorAll(".option").forEach((opt) => {
-    opt.onclick = () => {
-      document
-        .querySelectorAll(".option")
-        .forEach((o) => o.classList.remove("selected"));
-      opt.classList.add("selected");
-      selected = opt.dataset.i;
-      document.getElementById("next").disabled = false;
-    };
-  });
-
-  document.getElementById("next").onclick = next;
-}
-
-function next() {
-  const q = material.quiz[index];
-  const correct =
-    q.type === "mc"
-      ? Number(selected) === q.answer
-      : (selected === "true") === q.answer;
-
-  if (correct) score++;
-
-  index++;
-  selected = null;
-
-  index < material.quiz.length ? render() : finish();
-}
-
-function finish() {
-  const total = material.quiz.length;
-  const pct = Math.round((score / total) * 100);
-  const msg =
-    pct >= 80
-      ? "Hebat! Pemahamanmu sangat baik."
-      : pct >= 50
-      ? "Bagus! Terus tingkatkan."
-      : "Tidak apa-apa, ayo belajar lagi.";
-
-  app.innerHTML = `
-    <section class="quiz-card result">
-      <div class="result-score">${pct}%</div>
-      <p>Benar: ${score}</p>
-      <p>Salah: ${total - score}</p>
-      <blockquote>${msg}</blockquote>
-
-      <div class="actions">
-        <button class="primary" onclick="location.reload()">Ulangi</button>
-      </div>
-    </section>
-  `;
-}

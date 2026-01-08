@@ -11,6 +11,9 @@
     <!-- CSS utama (TIDAK DIUBAH) -->
     <link rel="stylesheet" href="../../../v2.css" />
 
+    <!-- Progress Manager -->
+    <script src="../../../assets/js/progress-manager.js"></script>
+
     <!-- =================================================
        CSS KHUSUS DAFTAR MATERI (AMAN & TERISOLASI)
        TIDAK MERUSAK HALAMAN LAIN
@@ -204,81 +207,111 @@
 
       <!-- ================= CARD GRID ================= -->
       <section class="card-grid daftar-materi">
-        <article class="card">
+        <article class="card" data-materi="1">
           <h3>01. Apa Itu Emisi?</h3>
           <p>
             Mempelajari pengertian emisi, sumber-sumbernya, serta bagaimana
             aktivitas manusia menghasilkan gas yang berdampak pada lingkungan.
           </p>
-          <span class="status">Sudah dipelajari</span>
+          <span class="status" data-status="status-1">Belum dipelajari</span>
           <div class="card-actions">
             <a href="materi.html" class="btn" role="button">📖 Baca Materi</a>
-            <a href="../quiz/views/quiz_materi.html" class="btn secondary" role="button">📝 Mulai Kuis</a>
+            <a
+              href="../quiz/views/quiz_materi.html"
+              class="btn secondary"
+              role="button"
+              >📝 Mulai Kuis</a
+            >
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-materi="2">
           <h3>02. Apa Itu Net Zero Emission?</h3>
           <p>
             Memahami konsep Net Zero Emission dan mengapa pengurangan emisi
             karbon penting untuk menjaga keseimbangan bumi.
           </p>
-          <span class="status unread">Belum dipelajari</span>
+          <span class="status" data-status="status-2">Belum dipelajari</span>
           <div class="card-actions">
             <a href="materi_2.html" class="btn" role="button">📖 Baca Materi</a>
-            <a href="../quiz/views/quiz_materi_2.html" class="btn secondary" role="button">📝 Mulai Kuis</a>
+            <a
+              href="../quiz/views/quiz_materi_2.html"
+              class="btn secondary"
+              role="button"
+              >📝 Mulai Kuis</a
+            >
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-materi="3">
           <h3>03. Pengelolaan Lingkungan & Daur Ulang</h3>
           <p>
             Mengenal cara pengelolaan lingkungan yang baik serta peran daur
             ulang dalam mengurangi limbah dan pencemaran.
           </p>
-          <span class="status unread">Belum dipelajari</span>
+          <span class="status" data-status="status-3">Belum dipelajari</span>
           <div class="card-actions">
             <a href="materi_3.html" class="btn" role="button">📖 Baca Materi</a>
-            <a href="../quiz/views/quiz_materi_3.html" class="btn secondary" role="button">📝 Mulai Kuis</a>
+            <a
+              href="../quiz/views/quiz_materi_3.html"
+              class="btn secondary"
+              role="button"
+              >📝 Mulai Kuis</a
+            >
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-materi="4">
           <h3>04. Pengenalan Lingkungan & Perubahan Iklim</h3>
           <p>
             Menjelaskan hubungan antara lingkungan, aktivitas manusia, dan
             perubahan iklim yang memengaruhi kehidupan sehari-hari.
           </p>
-          <span class="status unread">Belum dipelajari</span>
+          <span class="status" data-status="status-4">Belum dipelajari</span>
           <div class="card-actions">
             <a href="materi_4.html" class="btn" role="button">📖 Baca Materi</a>
-            <a href="../quiz/views/quiz_materi_4.html" class="btn secondary" role="button">📝 Mulai Kuis</a>
+            <a
+              href="../quiz/views/quiz_materi_4.html"
+              class="btn secondary"
+              role="button"
+              >📝 Mulai Kuis</a
+            >
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-materi="5">
           <h3>05. Pemanasan Global</h3>
           <p>
             Membahas penyebab pemanasan global, dampaknya bagi bumi, serta peran
             manusia dalam mempercepat atau menguranginya.
           </p>
-          <span class="status unread">Belum dipelajari</span>
+          <span class="status" data-status="status-5">Belum dipelajari</span>
           <div class="card-actions">
             <a href="materi_5.html" class="btn" role="button">📖 Baca Materi</a>
-            <a href="../quiz/views/quiz_materi_5.html" class="btn secondary" role="button">📝 Mulai Kuis</a>
+            <a
+              href="../quiz/views/quiz_materi_5.html"
+              class="btn secondary"
+              role="button"
+              >📝 Mulai Kuis</a
+            >
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-materi="6">
           <h3>06. Hutan dan Pohon</h3>
           <p>
             Memahami peran hutan dan pohon dalam menyerap karbon serta menjaga
             keseimbangan iklim dan ekosistem.
           </p>
-          <span class="status unread">Belum dipelajari</span>
+          <span class="status" data-status="status-6">Belum dipelajari</span>
           <div class="card-actions">
             <a href="materi_6.html" class="btn" role="button">📖 Baca Materi</a>
-            <a href="../quiz/views/quiz_materi_6.html" class="btn secondary" role="button">📝 Mulai Kuis</a>
+            <a
+              href="../quiz/views/quiz_materi_6.html"
+              class="btn secondary"
+              role="button"
+              >📝 Mulai Kuis</a
+            >
           </div>
         </article>
 
@@ -497,6 +530,42 @@
             const el = document.querySelector('[data-route="materials"]');
             if (el) el.click();
           });
+      })();
+    </script>
+
+    <!-- Status Update Script -->
+    <script>
+      (() => {
+        const updateStatusDisplay = () => {
+          const progress = ProgressManager.getProgress();
+
+          for (let i = 1; i <= 6; i++) {
+            const statusEl = document.querySelector(
+              `[data-status="status-${i}"]`
+            );
+            if (!statusEl) continue;
+
+            const key = `materi_${i}`;
+            const data = progress[key];
+
+            if (data.read && data.quizCompleted) {
+              statusEl.textContent = "✅ Sudah dipelajari";
+              statusEl.classList.remove("unread");
+            } else if (data.read) {
+              statusEl.textContent = "📖 Sudah dibaca, kuis belum";
+              statusEl.classList.add("unread");
+            } else {
+              statusEl.textContent = "❌ Belum dipelajari";
+              statusEl.classList.add("unread");
+            }
+          }
+        };
+
+        // Initial update
+        updateStatusDisplay();
+
+        // Listen untuk progress changes
+        window.addEventListener("progressUpdated", updateStatusDisplay);
       })();
     </script>
   </body>

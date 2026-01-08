@@ -1,90 +1,124 @@
 (() => {
   const questions = [
     {
-      q: "Pemanasan global menyebabkan suhu Bumi menjadi …",
-      choices: ["Lebih dingin", "Tetap sama", "Lebih panas"],
+      q: "Pemanasan global merupakan kondisi meningkatnya suhu rata-rata Bumi. Akibat dari pemanasan global, suhu Bumi menjadi …",
+      choices: [
+        "Lebih dingin",
+        "Tetap sama",
+        "Lebih panas",
+        "Tidak dapat diprediksi",
+      ],
       a: 2,
       explain:
-        "Pemanasan global meningkatkan suhu rata-rata Bumi karena akumulasi gas rumah kaca.",
+        "Pemanasan global meningkatkan suhu rata-rata Bumi akibat penumpukan gas rumah kaca di atmosfer.",
     },
     {
-      q: "Asap dari kendaraan bermotor dapat menyebabkan …",
-      choices: ["Udara bersih", "Polusi udara", "Hujan sehat"],
+      q: "Kendaraan bermotor menghasilkan asap yang berdampak buruk bagi lingkungan. Asap dari kendaraan bermotor dapat menyebabkan …",
+      choices: [
+        "Udara menjadi lebih bersih",
+        "Terjadinya polusi udara",
+        "Hujan menjadi lebih sehat",
+        "Suhu udara menurun",
+      ],
       a: 1,
       explain:
-        "Asap kendaraan mengandung polutan yang merusak kualitas udara dan kesehatan.",
+        "Asap kendaraan bermotor mengandung polutan berbahaya yang menurunkan kualitas udara dan membahayakan kesehatan.",
     },
     {
-      q: "Penebangan pohon secara berlebihan dapat mempercepat …",
-      choices: ["Pertumbuhan tanaman", "Pemanasan global", "Udara segar"],
+      q: "Penebangan pohon secara berlebihan tanpa disertai penanaman kembali dapat mempercepat terjadinya …",
+      choices: [
+        "Pertumbuhan tanaman",
+        "Pemanasan global",
+        "Kualitas udara yang lebih baik",
+        "Keseimbangan lingkungan",
+      ],
       a: 1,
       explain:
-        "Kehilangan pohon mengurangi penyerapan CO₂, sehingga mempercepat pemanasan global.",
+        "Hilangnya pohon mengurangi kemampuan alam menyerap karbon dioksida (CO₂), sehingga mempercepat pemanasan global.",
     },
     {
-      q: "Salah satu dampak pemanasan global adalah …",
+      q: "Salah satu dampak nyata dari pemanasan global yang dapat diamati di berbagai belahan dunia adalah …",
       choices: [
         "Es di kutub mencair",
-        "Udara makin sejuk",
-        "Cuaca selalu sama",
+        "Udara menjadi semakin sejuk",
+        "Cuaca selalu stabil",
+        "Curah hujan berhenti sepenuhnya",
       ],
       a: 0,
       explain:
-        "Pemanasan global menyebabkan pencairan es di kutub yang berdampak pada kenaikan permukaan laut.",
+        "Pemanasan global menyebabkan pencairan es di kutub yang berkontribusi pada kenaikan permukaan laut.",
     },
     {
-      q: "Pemanasan global dapat menyebabkan bencana seperti …",
-      choices: ["Banjir dan kekeringan", "Pelangi", "Angin sepoi-sepoi"],
+      q: "Pemanasan global dapat memicu berbagai bencana alam. Salah satu bencana yang dapat terjadi akibat pemanasan global adalah …",
+      choices: [
+        "Banjir dan kekeringan",
+        "Pelangi di langit",
+        "Angin sepoi-sepoi",
+        "Kabut tipis di pagi hari",
+      ],
       a: 0,
       explain:
-        "Perubahan iklim meningkatkan frekuensi dan intensitas bencana seperti banjir dan kekeringan.",
+        "Perubahan iklim akibat pemanasan global meningkatkan frekuensi dan intensitas bencana seperti banjir dan kekeringan.",
     },
     {
-      q: "Menghemat listrik berarti kita membantu …",
-      choices: ["Menambah polusi", "Menjaga lingkungan", "Merusak alam"],
+      q: "Menghemat penggunaan listrik dalam kehidupan sehari-hari berarti kita turut membantu …",
+      choices: [
+        "Menambah jumlah polusi",
+        "Menjaga kelestarian lingkungan",
+        "Mempercepat kerusakan alam",
+        "Meningkatkan emisi gas rumah kaca",
+      ],
       a: 1,
       explain:
-        "Menghemat listrik mengurangi kebutuhan energi dari pembangkit yang menghasilkan emisi.",
+        "Menghemat listrik mengurangi kebutuhan energi dari pembangkit listrik yang menghasilkan emisi gas rumah kaca.",
     },
     {
-      q: "Menanam pohon bermanfaat untuk …",
+      q: "Menanam dan merawat pohon memberikan banyak manfaat bagi lingkungan. Salah satu manfaat utamanya adalah …",
       choices: [
         "Menambah panas Bumi",
         "Mengurangi panas Bumi",
-        "Merusak tanah",
+        "Merusak struktur tanah",
+        "Meningkatkan polusi udara",
       ],
       a: 1,
       explain:
-        "Pohon membantu menyerap CO₂ dan mendinginkan lingkungan melalui naungan dan transpirasi.",
+        "Pohon menyerap karbon dioksida dan memberikan keteduhan sehingga membantu menurunkan suhu lingkungan.",
     },
     {
-      q: "Jika pemanasan global terus terjadi, hewan bisa …",
+      q: "Jika pemanasan global terus terjadi tanpa upaya pencegahan, dampak yang mungkin dialami oleh hewan adalah …",
       choices: [
         "Kehilangan tempat tinggal",
-        "Hidup lebih nyaman",
-        "Tidak terpengaruh",
+        "Hidup menjadi lebih nyaman",
+        "Tidak terpengaruh sama sekali",
+        "Populasi meningkat pesat",
       ],
       a: 0,
       explain:
-        "Perubahan habitat akibat iklim membuat banyak spesies kehilangan tempat hidup dan sumber makanan.",
+        "Perubahan iklim dan rusaknya habitat menyebabkan banyak hewan kehilangan tempat hidup dan sumber makanan.",
     },
     {
-      q: "Membuang sampah sembarangan dapat …",
+      q: "Kebiasaan membuang sampah sembarangan dapat menimbulkan dampak buruk bagi lingkungan, yaitu …",
       choices: [
-        "Menjaga lingkungan",
+        "Menjaga kebersihan lingkungan",
         "Menyebabkan pencemaran",
-        "Mengurangi panas Bumi",
+        "Mengurangi pemanasan global",
+        "Memperbaiki kualitas tanah",
       ],
       a: 1,
       explain:
-        "Sampah yang tidak dikelola dapat mencemari tanah, air, dan udara, menimbulkan masalah lingkungan.",
+        "Sampah yang tidak dikelola dengan baik dapat mencemari tanah, air, dan udara.",
     },
     {
-      q: "Siapa yang bisa membantu mengurangi pemanasan global?",
-      choices: ["Orang dewasa saja", "Anak-anak saja", "Semua orang"],
-      a: 2,
+      q: "Upaya untuk mengurangi pemanasan global bukan hanya tanggung jawab satu pihak. Siapakah yang dapat berperan dalam mengurangi pemanasan global?",
+      choices: [
+        "Orang dewasa saja",
+        "Anak-anak saja",
+        "Pemerintah saja",
+        "Seluruh masyarakat",
+      ],
+      a: 3,
       explain:
-        "Upaya mengurangi pemanasan global membutuhkan tindakan dari seluruh lapisan masyarakat.",
+        "Mengurangi pemanasan global membutuhkan peran dan kerja sama dari seluruh lapisan masyarakat.",
     },
   ];
 
@@ -220,6 +254,14 @@
       els.review.appendChild(div);
     });
 
+    // Mark quiz as completed if ProgressManager is available
+    if (typeof ProgressManager !== "undefined") {
+      // Get materi number from URL
+      const params = new URLSearchParams(window.location.search);
+      const materiNumber = parseInt(params.get("materi") || "5", 10) || 5;
+      ProgressManager.markQuizCompleted(materiNumber);
+    }
+
     // no effect sounds here — only background music handled by toggle
   }
 
@@ -252,123 +294,3 @@
   // start background if enabled
   setBg(audioOn);
 })();
-const QUIZ_MATERIALS = [
-  {
-    title: "Apa Itu Emisi?",
-    quiz: [
-      {
-        type: "mc",
-        text: "Lingkungan mencakup...",
-        options: ["Rumah dan sekolah", "Hanya cuaca", "Hanya laut"],
-        answer: 0,
-      },
-      {
-        type: "tf",
-        text: "Cuaca adalah keadaan udara harian.",
-        answer: true,
-      },
-    ],
-  },
-];
-
-const app = document.getElementById("quiz-app");
-const params = new URLSearchParams(location.search);
-const materialIndex = parseInt(params.get("materi") || "0", 10);
-const material = QUIZ_MATERIALS[materialIndex];
-
-let index = 0;
-let score = 0;
-let selected = null;
-
-render();
-
-function render() {
-  const q = material.quiz[index];
-  const progress = Math.round(((index + 1) / material.quiz.length) * 100);
-
-  app.innerHTML = `
-    <section class="quiz-card">
-      <div class="quiz-header">
-        <div class="progress-text">Soal ${index + 1} / ${
-    material.quiz.length
-  }</div>
-        <div>${progress}%</div>
-      </div>
-
-      <div class="progress-bar">
-        <div class="progress-fill" style="width:${progress}%"></div>
-      </div>
-
-      <div class="question">${q.text}</div>
-
-      <div class="options">
-        ${
-          q.type === "mc"
-            ? q.options
-                .map((o, i) => `<div class="option" data-i="${i}">${o}</div>`)
-                .join("")
-            : `
-              <div class="option" data-i="true">Benar</div>
-              <div class="option" data-i="false">Salah</div>
-            `
-        }
-      </div>
-
-      <div class="actions">
-        <button class="primary" id="next" disabled>Soal Berikutnya</button>
-      </div>
-    </section>
-  `;
-
-  document.querySelectorAll(".option").forEach((opt) => {
-    opt.onclick = () => {
-      document
-        .querySelectorAll(".option")
-        .forEach((o) => o.classList.remove("selected"));
-      opt.classList.add("selected");
-      selected = opt.dataset.i;
-      document.getElementById("next").disabled = false;
-    };
-  });
-
-  document.getElementById("next").onclick = next;
-}
-
-function next() {
-  const q = material.quiz[index];
-  const correct =
-    q.type === "mc"
-      ? Number(selected) === q.answer
-      : (selected === "true") === q.answer;
-
-  if (correct) score++;
-
-  index++;
-  selected = null;
-
-  index < material.quiz.length ? render() : finish();
-}
-
-function finish() {
-  const total = material.quiz.length;
-  const pct = Math.round((score / total) * 100);
-  const msg =
-    pct >= 80
-      ? "Hebat! Pemahamanmu sangat baik."
-      : pct >= 50
-      ? "Bagus! Terus tingkatkan."
-      : "Tidak apa-apa, ayo belajar lagi.";
-
-  app.innerHTML = `
-    <section class="quiz-card result">
-      <div class="result-score">${pct}%</div>
-      <p>Benar: ${score}</p>
-      <p>Salah: ${total - score}</p>
-      <blockquote>${msg}</blockquote>
-
-      <div class="actions">
-        <button class="primary" onclick="location.reload()">Ulangi</button>
-      </div>
-    </section>
-  `;
-}

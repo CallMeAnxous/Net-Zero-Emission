@@ -9,6 +9,8 @@
     <link href="assets/img/logo.png" rel="icon" />
 
     <link rel="stylesheet" href="v2.css" />
+    <!-- Progress Manager -->
+    <script src="assets/js/progress-manager.js"></script>
   </head>
   <body>
     <div id="ambient-layer"></div>
@@ -209,19 +211,25 @@
         <div class="progress-grid">
           <div class="progress-item">
             <span class="progress-label">Materi Dibaca</span>
-            <span class="progress-value">1 / 6</span>
+            <span class="progress-value" id="materiRead">0 / 6</span>
           </div>
           <div class="progress-item">
             <span class="progress-label">Kuis Diselesaikan</span>
-            <span class="progress-value">1 / 6</span>
+            <span class="progress-value" id="quizCompleted">0 / 6</span>
+          </div>
+          <div class="progress-item">
+            <span class="progress-label">Materi Selesai</span>
+            <span class="progress-value" id="materiFullyCompleted">0 / 6</span>
           </div>
         </div>
 
         <div class="progress-bar">
-          <div class="progress-fill" style="width: 30%"></div>
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
         </div>
 
-        <p class="progress-tip">Hebat! Teruskan ya, Pahlawan 💪🌍</p>
+        <p class="progress-tip" id="progressTip">
+          Mulai belajar untuk melihat progresmu! 🚀🌍
+        </p>
       </section>
 
       <!-- MATERI -->
@@ -740,6 +748,51 @@
             const el = document.querySelector('[data-route="materials"]');
             if (el) el.click();
           });
+      })();
+    </script>
+
+    <!-- Progress Update Script -->
+    <script>
+      (() => {
+        const updateProgressDisplay = () => {
+          const stats = ProgressManager.getStats();
+
+          // Update values
+          document.getElementById(
+            "materiRead"
+          ).textContent = `${stats.materiRead} / ${stats.totalMaterials}`;
+          document.getElementById(
+            "quizCompleted"
+          ).textContent = `${stats.quizCompleted} / ${stats.totalMaterials}`;
+          document.getElementById(
+            "materiFullyCompleted"
+          ).textContent = `${stats.materiFullyCompleted} / ${stats.totalMaterials}`;
+
+          // Update progress bar
+          const progressFill = document.getElementById("progressFill");
+          progressFill.style.width = `${stats.overallProgress}%`;
+
+          // Update tip message
+          const progressTip = document.getElementById("progressTip");
+          if (stats.overallProgress === 0) {
+            progressTip.textContent =
+              "Mulai belajar untuk melihat progresmu! 🚀🌍";
+          } else if (stats.overallProgress < 50) {
+            progressTip.textContent = "Bagus! Teruskan perjalananmu. 💪🌱";
+          } else if (stats.overallProgress < 100) {
+            progressTip.textContent =
+              "Sudah hampir sempurna! Tinggal sedikit lagi! 🎯";
+          } else {
+            progressTip.textContent =
+              "Luar biasa! Kamu sudah menyelesaikan semua materi! 🏆🌟";
+          }
+        };
+
+        // Initial update
+        updateProgressDisplay();
+
+        // Listen untuk progress changes
+        window.addEventListener("progressUpdated", updateProgressDisplay);
       })();
     </script>
   </body>

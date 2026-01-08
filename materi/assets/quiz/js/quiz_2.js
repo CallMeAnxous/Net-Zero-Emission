@@ -1,124 +1,124 @@
 (() => {
   const questions = [
     {
-      q: "Apa arti Net Zero Emission?",
+      q: "Net Zero Emission merupakan konsep penting dalam menjaga lingkungan. Apa yang dimaksud dengan Net Zero Emission?",
       choices: [
-        "Menghasilkan banyak emisi",
-        "Tidak peduli lingkungan",
-        "Menyeimbangkan emisi agar tidak menambah beban Bumi",
-        "Membakar sampah",
+        "Menghasilkan emisi sebanyak mungkin",
+        "Tidak peduli terhadap kondisi lingkungan",
+        "Menyeimbangkan jumlah emisi agar tidak menambah beban Bumi",
+        "Membakar sampah untuk menghilangkan limbah",
       ],
       a: 2,
       explain:
-        "Net Zero berarti mengurangi dan menyeimbangkan emisi sehingga jumlah emisi yang dilepaskan tidak menambah beban atmosfer.",
+        "Net Zero Emission berarti mengurangi dan menyeimbangkan emisi yang dihasilkan sehingga tidak menambah jumlah emisi di atmosfer.",
     },
     {
-      q: "Tujuan Net Zero Emission adalah…",
+      q: "Penerapan Net Zero Emission memiliki tujuan utama bagi kehidupan di Bumi. Tujuan tersebut adalah …",
       choices: [
-        "Membuat Bumi panas",
-        "Menjaga Bumi tetap sehat",
-        "Menambah polusi",
-        "Menghabiskan energi",
+        "Membuat suhu Bumi semakin panas",
+        "Menjaga Bumi dan iklim tetap sehat",
+        "Menambah jumlah polusi udara",
+        "Menghabiskan sumber energi",
       ],
       a: 1,
       explain:
-        "Tujuan Net Zero adalah menjaga kondisi Bumi dan iklim agar tetap stabil dan sehat bagi semua makhluk.",
+        "Tujuan Net Zero Emission adalah menjaga kestabilan iklim dan kesehatan lingkungan bagi seluruh makhluk hidup.",
     },
     {
-      q: "Contoh Net Zero Emission di rumah adalah…",
+      q: "Berikut ini merupakan contoh penerapan Net Zero Emission di lingkungan rumah, yaitu …",
       choices: [
-        "Membiarkan TV menyala",
+        "Membiarkan televisi menyala sepanjang hari",
         "Memilah sampah sesuai jenisnya",
-        "Membakar plastik",
+        "Membakar sampah plastik",
         "Membuang sampah ke sungai",
       ],
       a: 1,
       explain:
-        "Memilah sampah membantu pengelolaan limbah sehingga dapat dikurangi, didaur ulang, atau diolah dengan benar.",
+        "Memilah sampah membantu proses pengelolaan limbah agar dapat dikurangi, digunakan kembali, atau didaur ulang.",
     },
     {
-      q: "Menanam pohon termasuk Net Zero Emission karena…",
+      q: "Menanam dan merawat pohon termasuk tindakan Net Zero Emission karena pohon dapat …",
       choices: [
-        "Membuat taman ramai",
-        "Menyerap gas di udara",
-        "Menghasilkan asap",
-        "Mengotori tanah",
+        "Membuat taman terlihat ramai",
+        "Menyerap gas karbon dioksida dari udara",
+        "Menghasilkan asap ke lingkungan",
+        "Mengotori permukaan tanah",
       ],
       a: 1,
       explain:
-        "Pohon menyerap CO₂ dari udara sehingga membantu menyeimbangkan emisi yang dilepaskan.",
+        "Pohon menyerap karbon dioksida (CO₂) dari udara sehingga membantu mengurangi dan menyeimbangkan emisi.",
     },
     {
-      q: "Salah satu manfaat Net Zero Emission adalah…",
+      q: "Salah satu manfaat utama dari penerapan Net Zero Emission bagi lingkungan adalah …",
       choices: [
-        "Udara menjadi kotor",
-        "Bumi semakin panas",
-        "Udara menjadi lebih bersih",
-        "Lingkungan rusak",
+        "Udara menjadi semakin kotor",
+        "Suhu Bumi terus meningkat",
+        "Kualitas udara menjadi lebih bersih",
+        "Lingkungan mengalami kerusakan",
       ],
       a: 2,
       explain:
-        "Dengan mengurangi emisi, kualitas udara membaik dan lingkungan menjadi lebih sehat.",
+        "Pengurangan emisi membantu meningkatkan kualitas udara dan menciptakan lingkungan yang lebih sehat.",
     },
     {
-      q: "Mematikan alat listrik jika tidak digunakan bertujuan untuk…",
+      q: "Mematikan lampu dan alat listrik saat tidak digunakan merupakan bagian dari Net Zero Emission karena bertujuan untuk …",
       choices: [
-        "Menambah emisi",
+        "Menambah jumlah emisi",
         "Menghemat energi dan mengurangi emisi",
-        "Membuat rumah gelap",
-        "Tidak ada manfaat",
+        "Membuat rumah menjadi gelap",
+        "Tidak memberikan manfaat apa pun",
       ],
       a: 1,
       explain:
-        "Mematikan perangkat mengurangi konsumsi listrik sehingga menurunkan kebutuhan energi dan emisi dari pembangkit.",
+        "Menghemat listrik menurunkan kebutuhan energi dari pembangkit listrik yang menghasilkan emisi gas rumah kaca.",
     },
     {
-      q: "Net Zero Emission penting untuk anak-anak karena…",
+      q: "Penerapan Net Zero Emission penting untuk anak-anak karena …",
       choices: [
-        "Agar bisa membuang sampah",
+        "Agar anak-anak bebas membuang sampah",
         "Menjaga masa depan Bumi tetap baik",
-        "Membuat lingkungan panas",
-        "Menghasilkan asap",
+        "Membuat lingkungan menjadi panas",
+        "Menghasilkan lebih banyak asap",
       ],
       a: 1,
       explain:
-        "Anak-anak akan mewarisi masa depan Bumi; kebiasaan baik membantu menjaga lingkungan untuk generasi berikutnya.",
+        "Anak-anak merupakan generasi penerus yang akan hidup di masa depan, sehingga penting menjaga Bumi sejak dini.",
     },
     {
-      q: "Jika semua orang menerapkan Net Zero Emission, maka…",
+      q: "Jika seluruh masyarakat menerapkan prinsip Net Zero Emission dalam kehidupan sehari-hari, maka …",
       choices: [
-        "Lingkungan semakin rusak",
-        "Udara semakin kotor",
-        "Bumi lebih nyaman ditinggali",
-        "Alam menghilang",
+        "Lingkungan akan semakin rusak",
+        "Udara menjadi semakin tercemar",
+        "Bumi menjadi lebih nyaman untuk ditinggali",
+        "Alam perlahan menghilang",
       ],
       a: 2,
       explain:
-        "Pengurangan emisi secara luas membuat iklim stabil dan lingkungan menjadi lebih layak huni.",
+        "Pengurangan emisi secara bersama-sama membantu menciptakan lingkungan yang bersih, sehat, dan berkelanjutan.",
     },
     {
-      q: "Anak bisa membantu Net Zero Emission dengan cara…",
+      q: "Anak-anak dapat berperan dalam mendukung Net Zero Emission melalui kebiasaan sederhana, seperti …",
       choices: [
         "Membuang sampah sembarangan",
-        "Menghemat listrik dan air",
-        "Membakar sampah",
-        "Menyalakan semua lampu",
+        "Menghemat penggunaan listrik dan air",
+        "Membakar sampah setiap hari",
+        "Menyalakan semua lampu di rumah",
       ],
       a: 1,
       explain:
-        "Menghemat listrik dan air mengurangi penggunaan sumber daya dan emisi yang terkait.",
+        "Menghemat listrik dan air mengurangi penggunaan sumber daya serta emisi yang dihasilkan dari proses energi.",
     },
     {
-      q: "Net Zero Emission mengajarkan kita untuk…",
+      q: "Penerapan Net Zero Emission mengajarkan kita untuk …",
       choices: [
-        "Tidak peduli lingkungan",
-        "Melakukan kebiasaan baik setiap hari",
+        "Tidak peduli terhadap lingkungan",
+        "Menerapkan kebiasaan baik setiap hari",
         "Menghasilkan lebih banyak emisi",
-        "Merusak alam",
+        "Merusak alam secara perlahan",
       ],
       a: 1,
       explain:
-        "Net Zero mendorong kebiasaan sehari-hari yang mengurangi dampak terhadap lingkungan.",
+        "Net Zero Emission mendorong kebiasaan sehari-hari yang ramah lingkungan dan bertanggung jawab.",
     },
   ];
 
@@ -254,6 +254,14 @@
       els.review.appendChild(div);
     });
 
+    // Mark quiz as completed if ProgressManager is available
+    if (typeof ProgressManager !== "undefined") {
+      // Get materi number from URL
+      const params = new URLSearchParams(window.location.search);
+      const materiNumber = parseInt(params.get("materi") || "2", 10) || 2;
+      ProgressManager.markQuizCompleted(materiNumber);
+    }
+
     // no effect sounds here — only background music handled by toggle
   }
 
@@ -286,123 +294,3 @@
   // start background if enabled
   setBg(audioOn);
 })();
-const QUIZ_MATERIALS = [
-  {
-    title: "Apa Itu Emisi?",
-    quiz: [
-      {
-        type: "mc",
-        text: "Lingkungan mencakup...",
-        options: ["Rumah dan sekolah", "Hanya cuaca", "Hanya laut"],
-        answer: 0,
-      },
-      {
-        type: "tf",
-        text: "Cuaca adalah keadaan udara harian.",
-        answer: true,
-      },
-    ],
-  },
-];
-
-const app = document.getElementById("quiz-app");
-const params = new URLSearchParams(location.search);
-const materialIndex = parseInt(params.get("materi") || "0", 10);
-const material = QUIZ_MATERIALS[materialIndex];
-
-let index = 0;
-let score = 0;
-let selected = null;
-
-render();
-
-function render() {
-  const q = material.quiz[index];
-  const progress = Math.round(((index + 1) / material.quiz.length) * 100);
-
-  app.innerHTML = `
-    <section class="quiz-card">
-      <div class="quiz-header">
-        <div class="progress-text">Soal ${index + 1} / ${
-    material.quiz.length
-  }</div>
-        <div>${progress}%</div>
-      </div>
-
-      <div class="progress-bar">
-        <div class="progress-fill" style="width:${progress}%"></div>
-      </div>
-
-      <div class="question">${q.text}</div>
-
-      <div class="options">
-        ${
-          q.type === "mc"
-            ? q.options
-                .map((o, i) => `<div class="option" data-i="${i}">${o}</div>`)
-                .join("")
-            : `
-              <div class="option" data-i="true">Benar</div>
-              <div class="option" data-i="false">Salah</div>
-            `
-        }
-      </div>
-
-      <div class="actions">
-        <button class="primary" id="next" disabled>Soal Berikutnya</button>
-      </div>
-    </section>
-  `;
-
-  document.querySelectorAll(".option").forEach((opt) => {
-    opt.onclick = () => {
-      document
-        .querySelectorAll(".option")
-        .forEach((o) => o.classList.remove("selected"));
-      opt.classList.add("selected");
-      selected = opt.dataset.i;
-      document.getElementById("next").disabled = false;
-    };
-  });
-
-  document.getElementById("next").onclick = next;
-}
-
-function next() {
-  const q = material.quiz[index];
-  const correct =
-    q.type === "mc"
-      ? Number(selected) === q.answer
-      : (selected === "true") === q.answer;
-
-  if (correct) score++;
-
-  index++;
-  selected = null;
-
-  index < material.quiz.length ? render() : finish();
-}
-
-function finish() {
-  const total = material.quiz.length;
-  const pct = Math.round((score / total) * 100);
-  const msg =
-    pct >= 80
-      ? "Hebat! Pemahamanmu sangat baik."
-      : pct >= 50
-      ? "Bagus! Terus tingkatkan."
-      : "Tidak apa-apa, ayo belajar lagi.";
-
-  app.innerHTML = `
-    <section class="quiz-card result">
-      <div class="result-score">${pct}%</div>
-      <p>Benar: ${score}</p>
-      <p>Salah: ${total - score}</p>
-      <blockquote>${msg}</blockquote>
-
-      <div class="actions">
-        <button class="primary" onclick="location.reload()">Ulangi</button>
-      </div>
-    </section>
-  `;
-}

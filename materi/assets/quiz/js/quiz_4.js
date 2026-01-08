@@ -1,82 +1,124 @@
 (() => {
   const questions = [
     {
-      q: "Lingkungan yang bersih membuat kita menjadi …",
-      choices: ["Mudah sakit", "Sehat dan nyaman", "Cepat lelah"],
+      q: "Lingkungan yang bersih dan terawat memberikan dampak positif bagi kehidupan manusia. Lingkungan yang bersih membuat kita menjadi …",
+      choices: [
+        "Mudah terserang penyakit",
+        "Sehat dan merasa nyaman",
+        "Cepat merasa lelah",
+        "Tidak bersemangat beraktivitas",
+      ],
       a: 1,
       explain:
-        "Lingkungan bersih mengurangi penyakit dan membuat aktivitas sehari-hari lebih nyaman.",
+        "Lingkungan yang bersih mengurangi sumber penyakit dan membuat aktivitas sehari-hari menjadi lebih sehat dan nyaman.",
     },
     {
-      q: "Contoh lingkungan di sekitar kita adalah …",
-      choices: ["Gunung dan sungai", "Rumah dan sekolah", "Semua benar"],
-      a: 2,
+      q: "Lingkungan mencakup berbagai tempat yang ada di sekitar kita. Contoh lingkungan di sekitar kita adalah …",
+      choices: [
+        "Gunung dan sungai",
+        "Rumah dan sekolah",
+        "Hutan dan pantai",
+        "Semua jawaban benar",
+      ],
+      a: 3,
       explain:
-        "Lingkungan mencakup semua tempat di sekitar kita, termasuk gunung, sungai, rumah, dan sekolah.",
+        "Lingkungan meliputi semua tempat di sekitar kita, baik alam maupun tempat buatan manusia seperti rumah dan sekolah.",
     },
     {
-      q: "Perubahan iklim terjadi dalam waktu …",
-      choices: ["Singkat", "Lama", "Sekejap"],
+      q: "Perubahan iklim merupakan proses yang tidak terjadi secara tiba-tiba. Perubahan iklim terjadi dalam jangka waktu …",
+      choices: [
+        "Sangat singkat",
+        "Relatif lama",
+        "Hanya beberapa menit",
+        "Sekejap mata",
+      ],
       a: 1,
       explain:
-        "Perubahan iklim adalah proses yang berlangsung dalam jangka waktu panjang akibat akumulasi emisi dan gangguan alam.",
+        "Perubahan iklim berlangsung dalam jangka waktu yang panjang akibat akumulasi aktivitas manusia dan perubahan alam.",
     },
     {
-      q: "Salah satu tanda perubahan iklim adalah …",
-      choices: ["Cuaca makin panas", "Hujan tidak menentu", "Semua benar"],
-      a: 2,
+      q: "Perubahan iklim memiliki beberapa tanda yang dapat dirasakan dalam kehidupan sehari-hari. Salah satu tanda perubahan iklim adalah …",
+      choices: [
+        "Cuaca terasa semakin panas",
+        "Pola hujan menjadi tidak menentu",
+        "Musim sulit diprediksi",
+        "Semua jawaban benar",
+      ],
+      a: 3,
       explain:
-        "Perubahan iklim dapat menyebabkan suhu naik dan pola hujan menjadi tidak menentu.",
+        "Perubahan iklim dapat ditandai dengan kenaikan suhu, perubahan pola hujan, dan musim yang tidak menentu.",
     },
     {
-      q: "Asap kendaraan dapat menyebabkan …",
-      choices: ["Udara bersih", "Polusi udara", "Hujan sehat"],
+      q: "Asap yang dihasilkan oleh kendaraan bermotor dapat berdampak buruk bagi lingkungan karena dapat menyebabkan …",
+      choices: [
+        "Udara menjadi lebih bersih",
+        "Terjadinya polusi udara",
+        "Hujan menjadi lebih sehat",
+        "Lingkungan semakin segar",
+      ],
       a: 1,
       explain:
-        "Asap kendaraan mengandung partikel dan gas yang mencemari udara sehingga menurunkan kualitas udara.",
+        "Asap kendaraan bermotor mengandung gas dan partikel berbahaya yang mencemari udara dan menurunkan kualitas lingkungan.",
     },
     {
-      q: "Menebang pohon sembarangan dapat menyebabkan …",
-      choices: ["Banjir", "Lingkungan rusak", "Semua benar"],
-      a: 2,
+      q: "Menebang pohon secara sembarangan tanpa memperhatikan kelestarian alam dapat menyebabkan …",
+      choices: [
+        "Terjadinya banjir",
+        "Lingkungan menjadi rusak",
+        "Keseimbangan alam terganggu",
+        "Semua jawaban benar",
+      ],
+      a: 3,
       explain:
-        "Penebangan sembarangan mengurangi penyerapan air dan stabilitas tanah, meningkatkan risiko banjir dan kerusakan lingkungan.",
+        "Penebangan sembarangan mengurangi penyerapan air dan kestabilan tanah sehingga meningkatkan risiko banjir dan kerusakan lingkungan.",
     },
     {
-      q: "Jika lingkungan rusak, hewan bisa …",
+      q: "Jika lingkungan mengalami kerusakan, dampak yang mungkin dialami oleh hewan adalah …",
       choices: [
         "Kehilangan tempat tinggal",
-        "Hidup lebih nyaman",
-        "Tidak terpengaruh",
+        "Hidup menjadi lebih nyaman",
+        "Tidak terpengaruh sama sekali",
+        "Populasi meningkat pesat",
       ],
       a: 0,
       explain:
-        "Kerusakan habitat memaksa hewan kehilangan tempat tinggal dan mengurangi sumber makanan.",
+        "Kerusakan lingkungan menyebabkan hilangnya habitat sehingga banyak hewan kehilangan tempat tinggal dan sumber makanan.",
     },
     {
-      q: "Menghemat listrik termasuk tindakan …",
-      choices: ["Merusak lingkungan", "Menjaga lingkungan", "Tidak berguna"],
+      q: "Menghemat penggunaan listrik dalam kehidupan sehari-hari termasuk tindakan yang dapat …",
+      choices: [
+        "Merusak lingkungan",
+        "Menjaga kelestarian lingkungan",
+        "Meningkatkan pencemaran",
+        "Tidak memberikan manfaat",
+      ],
       a: 1,
       explain:
-        "Hemat listrik mengurangi penggunaan energi dan emisi dari pembangkit, membantu menjaga lingkungan.",
+        "Menghemat listrik mengurangi penggunaan energi dan emisi dari pembangkit listrik, sehingga membantu menjaga lingkungan.",
     },
     {
-      q: "Menggunakan botol minum sendiri membantu mengurangi …",
-      choices: ["Sampah plastik", "Air minum", "Tanaman"],
+      q: "Menggunakan botol minum sendiri yang dapat dipakai ulang merupakan salah satu cara untuk mengurangi …",
+      choices: [
+        "Sampah plastik",
+        "Ketersediaan air minum",
+        "Jumlah tanaman",
+        "Kebersihan lingkungan",
+      ],
       a: 0,
       explain:
-        "Menggunakan botol yang dapat dipakai ulang mengurangi sampah plastik sekali pakai.",
+        "Penggunaan botol minum ulang mengurangi sampah plastik sekali pakai yang dapat mencemari lingkungan.",
     },
     {
-      q: "Siapa yang bisa menjaga bumi dari perubahan iklim?",
+      q: "Upaya menjaga bumi dari dampak perubahan iklim bukan hanya tugas satu pihak. Siapa yang dapat berperan dalam menjaga bumi?",
       choices: [
         "Orang dewasa saja",
         "Pemerintah saja",
+        "Anak-anak saja",
         "Semua orang, termasuk anak-anak",
       ],
-      a: 2,
+      a: 3,
       explain:
-        "Upaya menjaga bumi memerlukan partisipasi semua pihak, termasuk anak-anak, keluarga, komunitas, dan pemerintah.",
+        "Menjaga bumi dari perubahan iklim memerlukan kerja sama seluruh masyarakat, mulai dari anak-anak hingga orang dewasa.",
     },
   ];
 
@@ -212,6 +254,14 @@
       els.review.appendChild(div);
     });
 
+    // Mark quiz as completed if ProgressManager is available
+    if (typeof ProgressManager !== "undefined") {
+      // Get materi number from URL
+      const params = new URLSearchParams(window.location.search);
+      const materiNumber = parseInt(params.get("materi") || "4", 10) || 4;
+      ProgressManager.markQuizCompleted(materiNumber);
+    }
+
     // no effect sounds here — only background music handled by toggle
   }
 
@@ -244,123 +294,3 @@
   // start background if enabled
   setBg(audioOn);
 })();
-const QUIZ_MATERIALS = [
-  {
-    title: "Apa Itu Emisi?",
-    quiz: [
-      {
-        type: "mc",
-        text: "Lingkungan mencakup...",
-        options: ["Rumah dan sekolah", "Hanya cuaca", "Hanya laut"],
-        answer: 0,
-      },
-      {
-        type: "tf",
-        text: "Cuaca adalah keadaan udara harian.",
-        answer: true,
-      },
-    ],
-  },
-];
-
-const app = document.getElementById("quiz-app");
-const params = new URLSearchParams(location.search);
-const materialIndex = parseInt(params.get("materi") || "0", 10);
-const material = QUIZ_MATERIALS[materialIndex];
-
-let index = 0;
-let score = 0;
-let selected = null;
-
-render();
-
-function render() {
-  const q = material.quiz[index];
-  const progress = Math.round(((index + 1) / material.quiz.length) * 100);
-
-  app.innerHTML = `
-    <section class="quiz-card">
-      <div class="quiz-header">
-        <div class="progress-text">Soal ${index + 1} / ${
-    material.quiz.length
-  }</div>
-        <div>${progress}%</div>
-      </div>
-
-      <div class="progress-bar">
-        <div class="progress-fill" style="width:${progress}%"></div>
-      </div>
-
-      <div class="question">${q.text}</div>
-
-      <div class="options">
-        ${
-          q.type === "mc"
-            ? q.options
-                .map((o, i) => `<div class="option" data-i="${i}">${o}</div>`)
-                .join("")
-            : `
-              <div class="option" data-i="true">Benar</div>
-              <div class="option" data-i="false">Salah</div>
-            `
-        }
-      </div>
-
-      <div class="actions">
-        <button class="primary" id="next" disabled>Soal Berikutnya</button>
-      </div>
-    </section>
-  `;
-
-  document.querySelectorAll(".option").forEach((opt) => {
-    opt.onclick = () => {
-      document
-        .querySelectorAll(".option")
-        .forEach((o) => o.classList.remove("selected"));
-      opt.classList.add("selected");
-      selected = opt.dataset.i;
-      document.getElementById("next").disabled = false;
-    };
-  });
-
-  document.getElementById("next").onclick = next;
-}
-
-function next() {
-  const q = material.quiz[index];
-  const correct =
-    q.type === "mc"
-      ? Number(selected) === q.answer
-      : (selected === "true") === q.answer;
-
-  if (correct) score++;
-
-  index++;
-  selected = null;
-
-  index < material.quiz.length ? render() : finish();
-}
-
-function finish() {
-  const total = material.quiz.length;
-  const pct = Math.round((score / total) * 100);
-  const msg =
-    pct >= 80
-      ? "Hebat! Pemahamanmu sangat baik."
-      : pct >= 50
-      ? "Bagus! Terus tingkatkan."
-      : "Tidak apa-apa, ayo belajar lagi.";
-
-  app.innerHTML = `
-    <section class="quiz-card result">
-      <div class="result-score">${pct}%</div>
-      <p>Benar: ${score}</p>
-      <p>Salah: ${total - score}</p>
-      <blockquote>${msg}</blockquote>
-
-      <div class="actions">
-        <button class="primary" onclick="location.reload()">Ulangi</button>
-      </div>
-    </section>
-  `;
-}

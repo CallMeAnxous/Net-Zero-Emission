@@ -1,82 +1,114 @@
 (() => {
   const questions = [
     {
-      q: "Hutan adalah tempat yang banyak ditumbuhi …",
-      choices: ["Rumah", "Pohon dan tanaman", "Gedung"],
-      a: 1,
-      explain:
-        "Hutan adalah area luas yang didominasi pepohonan dan vegetasi lainnya.",
-    },
-    {
-      q: "Akar pohon berfungsi untuk …",
-      choices: ["Menyerap air", "Menghalangi hujan", "Membuat banjir"],
-      a: 0,
-      explain:
-        "Akar menyerap dan menyimpan air serta menahan tanah sehingga mencegah erosi.",
-    },
-    {
-      q: "Jika tidak ada pohon, air hujan akan …",
-      choices: ["Mengalir cepat di permukaan", "Meresap ke tanah", "Hilang"],
-      a: 0,
-      explain:
-        "Tanpa pohon, air hujan tidak tertahan dan cepat mengalir, meningkatkan risiko banjir dan erosi.",
-    },
-    {
-      q: "Air yang tersimpan di tanah dapat keluar menjadi …",
-      choices: ["Asap", "Mata air", "Batu"],
-      a: 1,
-      explain:
-        "Air tanah dapat muncul sebagai mata air yang menjadi sumber air bersih bagi lingkungan.",
-    },
-    {
-      q: "Salah satu manfaat hutan adalah …",
+      q: "Hutan merupakan wilayah alam yang memiliki peran penting bagi lingkungan. Hutan adalah tempat yang banyak ditumbuhi …",
       choices: [
-        "Menyebabkan banjir",
-        "Menjaga ketersediaan air",
-        "Mengotori lingkungan",
+        "Rumah dan bangunan",
+        "Pohon dan berbagai jenis tanaman",
+        "Gedung perkantoran",
+        "Jalan raya",
       ],
       a: 1,
       explain:
-        "Hutan menyimpan dan menjaga siklus air sehingga membantu ketersediaan air bersih.",
+        "Hutan adalah area luas yang didominasi oleh pepohonan dan berbagai jenis tumbuhan yang tumbuh secara alami.",
     },
     {
-      q: "Penebangan pohon sembarangan dapat menyebabkan …",
-      choices: ["Lingkungan aman", "Banjir dan longsor", "Udara sejuk"],
-      a: 1,
-      explain:
-        "Penebangan mengurangi penyangga tanah dan kemampuan menyerap air, sehingga meningkatkan risiko bencana.",
-    },
-    {
-      q: "Menanam pohon dapat membuat lingkungan menjadi …",
-      choices: ["Panas", "Sejuk", "Gersang"],
-      a: 1,
-      explain:
-        "Pohon memberi naungan dan menghasilkan uap air yang membantu mendinginkan lingkungan.",
-    },
-    {
-      q: "Pohon membantu mencegah banjir karena …",
+      q: "Setiap bagian pohon memiliki fungsi masing-masing. Apa fungsi utama akar pohon bagi lingkungan?",
       choices: [
-        "Menutup sungai",
         "Menyerap dan menyimpan air",
-        "Menghalangi awan",
+        "Menghalangi turunnya hujan",
+        "Menyebabkan banjir",
+        "Mengeringkan tanah",
+      ],
+      a: 0,
+      explain:
+        "Akar pohon berfungsi menyerap dan menyimpan air serta menahan tanah agar tidak mudah terkikis oleh air hujan.",
+    },
+    {
+      q: "Jika suatu daerah tidak memiliki pohon atau hutan, apa yang kemungkinan terjadi pada air hujan yang turun?",
+      choices: [
+        "Mengalir cepat di permukaan tanah",
+        "Meresap dengan baik ke dalam tanah",
+        "Diserap oleh awan",
+        "Hilang tanpa bekas",
+      ],
+      a: 0,
+      explain:
+        "Tanpa pohon, air hujan tidak tertahan oleh akar sehingga mengalir cepat di permukaan dan meningkatkan risiko banjir.",
+    },
+    {
+      q: "Air hujan yang diserap oleh akar pohon dan tersimpan di dalam tanah dapat keluar kembali ke permukaan sebagai …",
+      choices: ["Asap", "Mata air", "Batu", "Debu"],
+      a: 1,
+      explain:
+        "Air yang tersimpan di dalam tanah dapat muncul kembali sebagai mata air yang menjadi sumber air bersih.",
+    },
+    {
+      q: "Hutan memberikan berbagai manfaat bagi manusia dan lingkungan. Salah satu manfaat utama hutan adalah …",
+      choices: [
+        "Menjaga ketersediaan air",
+        "Menyebabkan pencemaran",
+        "Menghambat pertumbuhan tanaman",
+        "Meningkatkan risiko bencana",
+      ],
+      a: 0,
+      explain:
+        "Hutan berperan penting dalam menjaga siklus air sehingga ketersediaan air bersih tetap terjaga.",
+    },
+    {
+      q: "Penebangan pohon yang dilakukan secara sembarangan tanpa memperhatikan kelestarian lingkungan dapat menyebabkan …",
+      choices: [
+        "Lingkungan menjadi aman",
+        "Banjir dan tanah longsor",
+        "Udara semakin sejuk",
+        "Air hujan meresap lebih baik",
       ],
       a: 1,
       explain:
-        "Akar pohon dan bahan organik di tanah membantu menyerap hujan sehingga mengurangi limpasan permukaan.",
+        "Penebangan pohon mengurangi kemampuan tanah menyerap air dan menahan tanah, sehingga meningkatkan risiko banjir dan longsor.",
     },
     {
-      q: "Anak SD bisa menjaga hutan dengan cara …",
-      choices: ["Menebang pohon", "Merawat tanaman", "Membakar daun"],
-      a: 1,
-      explain:
-        "Merawat tanaman seperti menyiram dan menanam bibit membantu kelestarian hutan.",
-    },
-    {
-      q: "Menjaga hutan berarti menjaga …",
-      choices: ["Kehidupan makhluk hidup", "Sampah", "Bangunan"],
+      q: "Lingkungan yang memiliki banyak pohon dan tanaman biasanya memiliki kondisi udara yang …",
+      choices: ["Lebih sejuk", "Lebih panas", "Lebih kering", "Lebih berdebu"],
       a: 0,
       explain:
-        "Hutan mendukung keanekaragaman hayati dan menyediakan habitat bagi banyak makhluk hidup.",
+        "Pohon memberikan keteduhan dan membantu menjaga kelembapan udara sehingga lingkungan terasa lebih sejuk.",
+    },
+    {
+      q: "Pohon dapat membantu mencegah terjadinya banjir di suatu wilayah karena pohon …",
+      choices: [
+        "Menyerap dan menyimpan air hujan",
+        "Menutup aliran sungai",
+        "Menghalangi awan hujan",
+        "Mengeringkan tanah",
+      ],
+      a: 0,
+      explain:
+        "Akar pohon menyerap air hujan dan menyimpannya di dalam tanah sehingga mengurangi aliran air di permukaan.",
+    },
+    {
+      q: "Sebagai pelajar sekolah dasar, tindakan sederhana yang dapat dilakukan untuk menjaga kelestarian hutan adalah …",
+      choices: [
+        "Menebang pohon sembarangan",
+        "Merawat dan menanam tanaman",
+        "Membakar daun kering",
+        "Membuang sampah di hutan",
+      ],
+      a: 1,
+      explain:
+        "Merawat tanaman dan menanam pohon merupakan langkah sederhana untuk membantu menjaga kelestarian hutan.",
+    },
+    {
+      q: "Menjaga kelestarian hutan berarti turut menjaga …",
+      choices: [
+        "Kehidupan makhluk hidup",
+        "Sampah dan limbah",
+        "Bangunan dan gedung",
+        "Kendaraan bermotor",
+      ],
+      a: 0,
+      explain:
+        "Hutan merupakan habitat bagi banyak makhluk hidup dan berperan penting dalam menjaga keseimbangan ekosistem.",
     },
   ];
 
@@ -212,6 +244,14 @@
       els.review.appendChild(div);
     });
 
+    // Mark quiz as completed if ProgressManager is available
+    if (typeof ProgressManager !== "undefined") {
+      // Get materi number from URL
+      const params = new URLSearchParams(window.location.search);
+      const materiNumber = parseInt(params.get("materi") || "6", 10) || 6;
+      ProgressManager.markQuizCompleted(materiNumber);
+    }
+
     // no effect sounds here — only background music handled by toggle
   }
 
@@ -244,123 +284,3 @@
   // start background if enabled
   setBg(audioOn);
 })();
-const QUIZ_MATERIALS = [
-  {
-    title: "Apa Itu Emisi?",
-    quiz: [
-      {
-        type: "mc",
-        text: "Lingkungan mencakup...",
-        options: ["Rumah dan sekolah", "Hanya cuaca", "Hanya laut"],
-        answer: 0,
-      },
-      {
-        type: "tf",
-        text: "Cuaca adalah keadaan udara harian.",
-        answer: true,
-      },
-    ],
-  },
-];
-
-const app = document.getElementById("quiz-app");
-const params = new URLSearchParams(location.search);
-const materialIndex = parseInt(params.get("materi") || "0", 10);
-const material = QUIZ_MATERIALS[materialIndex];
-
-let index = 0;
-let score = 0;
-let selected = null;
-
-render();
-
-function render() {
-  const q = material.quiz[index];
-  const progress = Math.round(((index + 1) / material.quiz.length) * 100);
-
-  app.innerHTML = `
-    <section class="quiz-card">
-      <div class="quiz-header">
-        <div class="progress-text">Soal ${index + 1} / ${
-    material.quiz.length
-  }</div>
-        <div>${progress}%</div>
-      </div>
-
-      <div class="progress-bar">
-        <div class="progress-fill" style="width:${progress}%"></div>
-      </div>
-
-      <div class="question">${q.text}</div>
-
-      <div class="options">
-        ${
-          q.type === "mc"
-            ? q.options
-                .map((o, i) => `<div class="option" data-i="${i}">${o}</div>`)
-                .join("")
-            : `
-              <div class="option" data-i="true">Benar</div>
-              <div class="option" data-i="false">Salah</div>
-            `
-        }
-      </div>
-
-      <div class="actions">
-        <button class="primary" id="next" disabled>Soal Berikutnya</button>
-      </div>
-    </section>
-  `;
-
-  document.querySelectorAll(".option").forEach((opt) => {
-    opt.onclick = () => {
-      document
-        .querySelectorAll(".option")
-        .forEach((o) => o.classList.remove("selected"));
-      opt.classList.add("selected");
-      selected = opt.dataset.i;
-      document.getElementById("next").disabled = false;
-    };
-  });
-
-  document.getElementById("next").onclick = next;
-}
-
-function next() {
-  const q = material.quiz[index];
-  const correct =
-    q.type === "mc"
-      ? Number(selected) === q.answer
-      : (selected === "true") === q.answer;
-
-  if (correct) score++;
-
-  index++;
-  selected = null;
-
-  index < material.quiz.length ? render() : finish();
-}
-
-function finish() {
-  const total = material.quiz.length;
-  const pct = Math.round((score / total) * 100);
-  const msg =
-    pct >= 80
-      ? "Hebat! Pemahamanmu sangat baik."
-      : pct >= 50
-      ? "Bagus! Terus tingkatkan."
-      : "Tidak apa-apa, ayo belajar lagi.";
-
-  app.innerHTML = `
-    <section class="quiz-card result">
-      <div class="result-score">${pct}%</div>
-      <p>Benar: ${score}</p>
-      <p>Salah: ${total - score}</p>
-      <blockquote>${msg}</blockquote>
-
-      <div class="actions">
-        <button class="primary" onclick="location.reload()">Ulangi</button>
-      </div>
-    </section>
-  `;
-}

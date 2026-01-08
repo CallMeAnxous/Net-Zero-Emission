@@ -9,7 +9,9 @@
     <link href="../../../../assets/img/logo.png" rel="icon" />
 
     <link rel="stylesheet" href="../css/quiz.css" />
-    <link rel="stylesheet" href="../../css/modal.css">
+    <link rel="stylesheet" href="../../css/modal.css" />
+    <!-- Progress Manager -->
+    <script src="../../../../assets/js/progress-manager.js"></script>
   </head>
   <body>
     <!-- ================= HEADER ================= -->
@@ -39,7 +41,10 @@
         <!-- Navigation -->
         <nav class="main-nav">
           <a href="../../../../v2.html" class="nav-link">Beranda</a>
-          <a data-route="materials" href="../../views/daftar_materi.html" class="nav-link"
+          <a
+            data-route="materials"
+            href="../../views/daftar_materi.html"
+            class="nav-link"
             >Materi</a
           >
           <a href="#" class="nav-link" id="nav-about" data-modal="about"
@@ -138,7 +143,7 @@
       </div>
     </div>
 
-    <main class="quiz-app" aria-live="polite">
+    <main id="quiz-app" class="quiz-app" aria-live="polite">
       <header class="quiz-header">
         <h1>Kuis: Pemanasan Global</h1>
         <div class="quiz-controls">
@@ -162,9 +167,49 @@
         <h2>Hasil Kuis</h2>
         <p id="scoreText"></p>
         <div id="review"></div>
-        <div class="actions">
-          <button id="retry" class="btn white">Ulangi Kuis</button>
-          <a href="../../views/materi_6.html" class="btn">Materi Selanjutnya</a>
+        <div
+          class="actions"
+          style="
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+          "
+        >
+          <a
+            href="../../views/daftar_materi.html"
+            class="btn"
+            style="
+              flex: 0 1 calc(33.333% - 0.6rem);
+              min-width: 120px;
+              text-align: center;
+              padding: 0.75rem 0.5rem;
+            "
+            >📚 Daftar Materi</a
+          >
+          <a
+            href="../../views/materi_6.html"
+            class="btn"
+            style="
+              flex: 0 1 calc(33.333% - 0.6rem);
+              min-width: 120px;
+              text-align: center;
+              padding: 0.75rem 0.5rem;
+            "
+            >⏭️ Materi Selanjutnya</a
+          >
+          <button
+            id="retry"
+            class="btn white"
+            style="
+              flex: 0 1 calc(33.333% - 0.6rem);
+              min-width: 120px;
+              text-align: center;
+              padding: 0.75rem 0.5rem;
+            "
+          >
+            🔄 Ulangi Kuis
+          </button>
         </div>
       </section>
 
@@ -183,7 +228,9 @@
           <div class="footer-links">
             <strong>Navigasi</strong>
             <a href="../../../../v2.html">Beranda</a>
-            <a data-route="materials" href="../../views/daftar_materi.html">Materi</a>
+            <a data-route="materials" href="../../views/daftar_materi.html"
+              >Materi</a
+            >
             <a href="#" data-modal="about">Tentang</a>
             <a href="../../../../game/game.html">Game Edukasi</a>
           </div>
@@ -352,6 +399,20 @@
             const el = document.querySelector('[data-route="materials"]');
             if (el) el.click();
           });
+      })();
+    </script>
+
+    <!-- Mark Quiz as Completed -->
+    <script>
+      (() => {
+        const appEl = document.getElementById("quiz-app");
+        const observer = new MutationObserver(() => {
+          if (appEl.querySelector(".quiz-card.result")) {
+            ProgressManager.markQuizCompleted(5);
+            observer.disconnect();
+          }
+        });
+        observer.observe(appEl, { childList: true, subtree: true });
       })();
     </script>
   </body>

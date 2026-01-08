@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <!-- Modal styles (isolated) -->
     <link rel="stylesheet" href="../css/modal.css" />
+    <!-- Progress Manager -->
+    <script src="../../../assets/js/progress-manager.js"></script>
   </head>
 
   <body class="materi-page">
@@ -253,9 +255,9 @@
             <div class="content">
               <div class="k">
                 <p>
-                  <b>Pengelolaan Lingkungan & Daur Ulang</b> adalah upaya
-                  untuk menjaga bumi tetap bersih dan sehat dengan mengelola
-                  sumber daya secara bijak, mengurangi limbah, serta menggunakan
+                  <b>Pengelolaan Lingkungan & Daur Ulang</b> adalah upaya untuk
+                  menjaga bumi tetap bersih dan sehat dengan mengelola sumber
+                  daya secara bijak, mengurangi limbah, serta menggunakan
                   kembali barang agar tidak mencemari dan merusak lingkungan.
                 </p>
               </div>
@@ -390,6 +392,39 @@
                 allowfullscreen
               ></iframe>
             </div>
+          </div>
+
+          <!-- CTA: Mulai Kuis -->
+          <div style="margin-top: 3rem; text-align: center">
+            <div style="margin-bottom: 1rem">
+              <h3 style="color: #1a1a1a; margin: 0 0 0.5rem 0">
+                Sudah Siap Menguji Pemahamanmu?
+              </h3>
+              <p style="color: #666; margin: 0; font-size: 0.95rem">
+                Selesaikan kuis untuk mengonfirmasi pemahamanmu tentang materi
+                ini.
+              </p>
+            </div>
+            <a
+              href="../quiz/views/quiz_materi_3.html?materi=3"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.75rem 1.5rem;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+              "
+              onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6);'"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)';"
+            >
+              📝 Mulai Kuis Sekarang
+            </a>
           </div>
         </div>
       </div>
@@ -576,6 +611,14 @@
             const el = document.querySelector('[data-route="materials"]');
             if (el) el.click();
           });
+      })();
+    </script>
+
+    <!-- Mark Material as Read -->
+    <script>
+      (() => {
+        // Mark materi 3 as read when page is loaded
+        ProgressManager.markAsRead(3);
       })();
     </script>
   </body>

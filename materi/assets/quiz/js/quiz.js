@@ -1,124 +1,124 @@
 (() => {
   const questions = [
     {
-      q: "Apa itu Emisi?",
+      q: "Dalam kehidupan sehari-hari, manusia melakukan berbagai aktivitas seperti menggunakan kendaraan, listrik, dan mesin. Dari aktivitas tersebut, apa yang dimaksud dengan emisi?",
       choices: [
-        "Udara segar dari pohon",
-        "Gas atau asap yang keluar ke udara akibat kegiatan manusia",
-        "Air hujan",
-        "Angin sepoi-sepoi",
+        "Udara segar yang dihasilkan oleh tumbuhan dan pepohonan",
+        "Gas atau asap yang dilepaskan ke udara akibat berbagai aktivitas manusia",
+        "Air hujan yang turun dari awan ke permukaan Bumi",
+        "Angin sepoi-sepoi yang bertiup di lingkungan sekitar",
       ],
       a: 1,
       explain:
-        "Emisi adalah gas atau partikel yang dilepaskan ke udara dari aktivitas manusia seperti kendaraan, pabrik, dan pembakaran.",
+        "Emisi adalah gas atau partikel yang dilepaskan ke udara akibat aktivitas manusia, seperti kendaraan bermotor, kegiatan industri, dan proses pembakaran.",
     },
     {
-      q: "Contoh emisi di sekitar kita adalah…",
+      q: "Perhatikan lingkungan di sekitar kita. Dari beberapa kegiatan berikut, manakah yang dapat menghasilkan emisi dan berpotensi mencemari udara?",
       choices: [
-        "Menanam bunga",
-        "Asap dari kendaraan bermotor",
-        "Udara pagi",
-        "Air minum",
+        "Menanam tanaman hias di halaman rumah",
+        "Asap yang dihasilkan oleh kendaraan bermotor di jalan raya",
+        "Menghirup udara segar di pagi hari",
+        "Mengonsumsi air minum yang bersih",
       ],
       a: 1,
       explain:
-        "Asap kendaraan bermotor mengandung partikel dan gas yang termasuk emisi yang mencemari udara.",
+        "Asap kendaraan bermotor mengandung gas dan partikel berbahaya yang termasuk emisi dan dapat mencemari udara.",
     },
     {
-      q: "Asap dari pembakaran sampah termasuk emisi karena…",
+      q: "Sampah yang dibakar sering dianggap sebagai cara cepat untuk menghilangkannya. Mengapa asap dari pembakaran sampah termasuk ke dalam emisi yang berbahaya?",
       choices: [
-        "Mengandung gas berbahaya",
-        "Membuat taman indah",
-        "Membersihkan udara",
-        "Menyegarkan lingkungan",
+        "Karena mengandung gas dan zat beracun yang mencemari udara",
+        "Karena dapat membuat lingkungan terlihat lebih rapi",
+        "Karena membantu membersihkan udara dari kotoran",
+        "Karena membuat udara menjadi lebih segar",
       ],
       a: 0,
       explain:
-        "Pembakaran sampah melepaskan gas beracun dan partikel yang berbahaya bagi kesehatan dan lingkungan.",
+        "Pembakaran sampah melepaskan gas beracun dan partikel berbahaya yang dapat merusak lingkungan dan membahayakan kesehatan.",
     },
     {
-      q: "Lampu yang dibiarkan menyala lama dapat menyebabkan emisi karena…",
+      q: "Lampu dan alat elektronik sangat membantu aktivitas manusia. Namun, mengapa kebiasaan membiarkan lampu menyala terlalu lama dapat meningkatkan jumlah emisi?",
       choices: [
-        "Menghemat listrik",
-        "Menghasilkan lebih banyak CO₂",
-        "Membuat ruangan terang",
-        "Tidak berpengaruh",
+        "Karena penggunaan listrik selalu menghemat energi",
+        "Karena peningkatan penggunaan listrik menyebabkan pembangkit listrik menghasilkan emisi CO₂",
+        "Karena lampu membuat ruangan menjadi terang",
+        "Karena lampu tidak memiliki dampak terhadap lingkungan",
       ],
       a: 1,
       explain:
-        "Pemakaian listrik yang tinggi sering kali berarti pembangkitan listrik lebih besar, yang dapat meningkatkan emisi CO₂ dari sumber energi fosil.",
+        "Sebagian besar listrik dihasilkan dari pembangkit berbahan bakar fosil yang menghasilkan emisi CO₂ ketika kebutuhan listrik meningkat.",
     },
     {
-      q: "Gas rumah kaca berfungsi untuk…",
+      q: "Di atmosfer Bumi terdapat gas rumah kaca yang memiliki peran penting. Apa fungsi utama gas rumah kaca bagi kehidupan di Bumi?",
       choices: [
-        "Membuat Bumi tetap hangat",
-        "Membuat Bumi beku",
-        "Membersihkan udara",
-        "Menghilangkan awan",
+        "Menjaga suhu Bumi agar tetap hangat dan layak dihuni",
+        "Membuat suhu Bumi menjadi sangat dingin",
+        "Membersihkan udara dari seluruh polusi",
+        "Menghilangkan awan dan hujan",
       ],
       a: 0,
       explain:
-        "Gas rumah kaca memerangkap panas di atmosfer sehingga membantu menjaga suhu Bumi tetap hangat; namun kelebihannya menyebabkan pemanasan berlebih.",
+        "Gas rumah kaca menahan panas di atmosfer sehingga suhu Bumi tetap hangat, tetapi jika jumlahnya berlebihan dapat menyebabkan pemanasan global.",
     },
     {
-      q: "Jika gas rumah kaca terlalu banyak, maka…",
+      q: "Gas rumah kaca dibutuhkan dalam jumlah tertentu. Namun, apa yang akan terjadi jika gas rumah kaca jumlahnya terlalu banyak di atmosfer?",
       choices: [
-        "Bumi menjadi lebih dingin",
-        "Bumi menjadi terlalu panas",
-        "Hujan berhenti",
-        "Tidak terjadi apa-apa",
+        "Suhu Bumi menjadi lebih dingin",
+        "Suhu rata-rata Bumi meningkat",
+        "Hujan berhenti turun selamanya",
+        "Tidak terjadi perubahan apa pun",
       ],
       a: 1,
       explain:
-        "Kelebihan gas rumah kaca meningkatkan efek rumah kaca sehingga suhu rata‑rata Bumi naik (pemanasan global).",
+        "Jumlah gas rumah kaca yang berlebihan memperkuat efek rumah kaca dan menyebabkan peningkatan suhu rata-rata Bumi.",
     },
     {
-      q: "Emisi yang berlebihan dapat menyebabkan…",
+      q: "Emisi yang dihasilkan secara berlebihan dan terus-menerus dapat menimbulkan berbagai dampak. Dampak utama dari kondisi tersebut adalah…",
       choices: [
-        "Udara lebih bersih",
-        "Lingkungan sehat",
-        "Pencemaran udara",
-        "Alam semakin hijau",
+        "Udara menjadi semakin bersih",
+        "Lingkungan menjadi lebih sehat",
+        "Terjadinya pencemaran udara",
+        "Alam menjadi lebih hijau",
       ],
       a: 2,
       explain:
-        "Emisi berlebih menimbulkan polusi udara yang merugikan kesehatan manusia, hewan, dan tumbuhan.",
+        "Emisi berlebih menyebabkan pencemaran udara yang berdampak buruk bagi kesehatan manusia, hewan, dan tumbuhan.",
     },
     {
-      q: "Manakah kegiatan yang menghasilkan emisi?",
+      q: "Beberapa kegiatan manusia berdampak baik bagi lingkungan, sementara yang lain menghasilkan emisi. Manakah kegiatan berikut yang menghasilkan emisi?",
       choices: [
-        "Bersepeda",
-        "Menanam pohon",
-        "Mengendarai motor",
-        "Mematikan lampu",
+        "Bersepeda ke sekolah",
+        "Menanam pohon di lingkungan sekitar",
+        "Mengendarai sepeda motor berbahan bakar bensin",
+        "Mematikan lampu saat tidak digunakan",
       ],
       a: 2,
       explain:
-        "Mengendarai motor menggunakan bahan bakar fosil yang menghasilkan gas buang berupa emisi.",
+        "Sepeda motor menggunakan bahan bakar fosil yang menghasilkan gas buang berupa emisi.",
     },
     {
-      q: "Emisi paling sering berasal dari…",
+      q: "Jika dilihat secara umum, dari manakah sumber emisi paling banyak berasal dalam kehidupan manusia modern?",
       choices: [
-        "Hewan peliharaan",
-        "Kegiatan manusia seperti transportasi dan listrik",
-        "Bunga",
-        "Air laut",
+        "Hewan peliharaan di rumah",
+        "Aktivitas manusia seperti transportasi, listrik, dan industri",
+        "Tumbuhan dan pepohonan",
+        "Air laut dan sungai",
       ],
       a: 1,
       explain:
-        "Sumber utama emisi adalah aktivitas manusia seperti transportasi, pembangkit listrik, dan industri.",
+        "Sebagian besar emisi berasal dari aktivitas manusia, terutama transportasi, pembangkit listrik, dan kegiatan industri.",
     },
     {
-      q: "Cara mengurangi emisi adalah…",
+      q: "Upaya sederhana dapat dilakukan sejak dini untuk menjaga lingkungan. Manakah tindakan berikut yang paling tepat untuk membantu mengurangi emisi?",
       choices: [
-        "Membakar sampah",
-        "Menghemat listrik",
-        "Menyalakan AC terus",
+        "Membakar sampah secara rutin",
+        "Menghemat penggunaan listrik di rumah",
+        "Menyalakan pendingin ruangan sepanjang hari",
         "Membuang sampah sembarangan",
       ],
       a: 1,
       explain:
-        "Menghemat listrik mengurangi kebutuhan energi dan emisi dari pembangkit listrik, sehingga membantu menurunkan emisi.",
+        "Menghemat listrik dapat mengurangi kebutuhan energi dan menurunkan emisi yang dihasilkan oleh pembangkit listrik.",
     },
   ];
 
@@ -254,6 +254,14 @@
       els.review.appendChild(div);
     });
 
+    // Mark quiz as completed if ProgressManager is available
+    if (typeof ProgressManager !== "undefined") {
+      // Get materi number from URL
+      const params = new URLSearchParams(window.location.search);
+      const materiNumber = parseInt(params.get("materi") || "1", 10) || 1;
+      ProgressManager.markQuizCompleted(materiNumber);
+    }
+
     // no effect sounds here — only background music handled by toggle
   }
 
@@ -286,123 +294,3 @@
   // start background if enabled
   setBg(audioOn);
 })();
-const QUIZ_MATERIALS = [
-  {
-    title: "Apa Itu Emisi?",
-    quiz: [
-      {
-        type: "mc",
-        text: "Lingkungan mencakup...",
-        options: ["Rumah dan sekolah", "Hanya cuaca", "Hanya laut"],
-        answer: 0,
-      },
-      {
-        type: "tf",
-        text: "Cuaca adalah keadaan udara harian.",
-        answer: true,
-      },
-    ],
-  },
-];
-
-const app = document.getElementById("quiz-app");
-const params = new URLSearchParams(location.search);
-const materialIndex = parseInt(params.get("materi") || "0", 10);
-const material = QUIZ_MATERIALS[materialIndex];
-
-let index = 0;
-let score = 0;
-let selected = null;
-
-render();
-
-function render() {
-  const q = material.quiz[index];
-  const progress = Math.round(((index + 1) / material.quiz.length) * 100);
-
-  app.innerHTML = `
-    <section class="quiz-card">
-      <div class="quiz-header">
-        <div class="progress-text">Soal ${index + 1} / ${
-    material.quiz.length
-  }</div>
-        <div>${progress}%</div>
-      </div>
-
-      <div class="progress-bar">
-        <div class="progress-fill" style="width:${progress}%"></div>
-      </div>
-
-      <div class="question">${q.text}</div>
-
-      <div class="options">
-        ${
-          q.type === "mc"
-            ? q.options
-                .map((o, i) => `<div class="option" data-i="${i}">${o}</div>`)
-                .join("")
-            : `
-              <div class="option" data-i="true">Benar</div>
-              <div class="option" data-i="false">Salah</div>
-            `
-        }
-      </div>
-
-      <div class="actions">
-        <button class="primary" id="next" disabled>Soal Berikutnya</button>
-      </div>
-    </section>
-  `;
-
-  document.querySelectorAll(".option").forEach((opt) => {
-    opt.onclick = () => {
-      document
-        .querySelectorAll(".option")
-        .forEach((o) => o.classList.remove("selected"));
-      opt.classList.add("selected");
-      selected = opt.dataset.i;
-      document.getElementById("next").disabled = false;
-    };
-  });
-
-  document.getElementById("next").onclick = next;
-}
-
-function next() {
-  const q = material.quiz[index];
-  const correct =
-    q.type === "mc"
-      ? Number(selected) === q.answer
-      : (selected === "true") === q.answer;
-
-  if (correct) score++;
-
-  index++;
-  selected = null;
-
-  index < material.quiz.length ? render() : finish();
-}
-
-function finish() {
-  const total = material.quiz.length;
-  const pct = Math.round((score / total) * 100);
-  const msg =
-    pct >= 80
-      ? "Hebat! Pemahamanmu sangat baik."
-      : pct >= 50
-      ? "Bagus! Terus tingkatkan."
-      : "Tidak apa-apa, ayo belajar lagi.";
-
-  app.innerHTML = `
-    <section class="quiz-card result">
-      <div class="result-score">${pct}%</div>
-      <p>Benar: ${score}</p>
-      <p>Salah: ${total - score}</p>
-      <blockquote>${msg}</blockquote>
-
-      <div class="actions">
-        <button class="primary" onclick="location.reload()">Ulangi</button>
-      </div>
-    </section>
-  `;
-}
