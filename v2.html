@@ -161,7 +161,9 @@
           </p>
 
           <div class="card-actions">
-            <button class="btn primary">🚀 Mulai Petualangan</button>
+            <button class="btn primary">
+              <a href="#game-cta">🚀 Mulai Petualangan</a>
+            </button>
             <button class="btn secondary">
               <a
                 data-route="materials"
@@ -253,7 +255,7 @@
       </section> -->
 
       <!-- CTA GAME -->
-      <section class="game-cta">
+      <section class="game-cta" id="game-cta">
         <div class="game-cta-card">
           <h2>🎮 Mainkan Game Edukasi!</h2>
           <p>
@@ -281,7 +283,11 @@
         <div class="footer-links">
           <strong>Navigasi</strong>
           <a href="v2.html">Beranda</a>
-          <a data-route="materials" href="materi/assets/views/daftar_materi.html">Materi</a>
+          <a
+            data-route="materials"
+            href="materi/assets/views/daftar_materi.html"
+            >Materi</a
+          >
           <a href="#" data-modal="about">Tentang</a>
           <a href="game/game.html">Game Edukasi</a>
         </div>
@@ -292,10 +298,11 @@
           <p>Belajar bersama, bertindak bersama.</p>
           <small>© 2025 GreenMind Web</small>
           <small
-              >Made by
-              <a href="https://polmind.ac.id/" target="_blank"
-                >Politeknik Mitra Industri</a
-              ></small
+            >Made by
+            <a href="https://polmind.ac.id/" target="_blank"
+              >Politeknik Mitra Industri</a
+            ></small
+          >
         </div>
       </div>
     </footer>
@@ -610,7 +617,7 @@
         ease: "power3.out",
       });
     </script>
-    
+
     <script>
       (() => {
         const toggle = document.querySelector(".nav-toggle");
@@ -623,7 +630,9 @@
     </script>
     <script>
       (function () {
-        const triggers = Array.from(document.querySelectorAll('[data-modal="about"]'));
+        const triggers = Array.from(
+          document.querySelectorAll('[data-modal="about"]')
+        );
         const modal = document.getElementById("aboutModal");
         const closeBtn = document.getElementById("aboutClose");
         const closeBtn2 = document.getElementById("close2");

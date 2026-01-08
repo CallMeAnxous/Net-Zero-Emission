@@ -1,3 +1,3 @@
-document.addEventListener('DOMContentLoaded',()=>{
-  document.querySelector('.page')?.classList.add('ready');
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".page")?.classList.add("ready");
 });
