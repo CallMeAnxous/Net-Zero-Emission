@@ -90,6 +90,10 @@
 
   const total = questions.length;
   let idx = 0;
+  // clear any previous quiz answers so quiz starts fresh on page load
+  try {
+    localStorage.removeItem("gm_quiz_answers");
+  } catch (e) {}
   const answers = JSON.parse(localStorage.getItem("gm_quiz_answers") || "[]");
   let audioOn = true;
 
