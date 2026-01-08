@@ -1,152 +1,491 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eco Catcher – Misi Net Zero</title>
-  <link rel="stylesheet" href="game.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div>
-        <h1>♻️ Eco Catcher</h1>
-        <p class="subtitle">Tangkap sampah untuk progress, hindari bom, jawab kuis dari kertas!</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eco Catcher – Misi Net Zero</title>
+
+    <!-- Icon Website -->
+    <link href="../assets/img/logo.png" rel="icon" />
+
+    <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="../materi/assets/css/modal.css" />
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Brand -->
+        <a href="../v2.html" class="brand">
+          <img src="../assets/img/logo.png" alt="GreenMind Web" class="logo-img" />
+          <div class="brand-text">
+            <strong>GreenMind Web</strong>
+            <span>Pahlawan Bumi Kecil</span>
+          </div>
+        </a>
+
+        <!-- Right Actions -->
+        <div class="header-actions">
+          <!-- Burger -->
+          <button class="nav-toggle" aria-label="Buka menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <a href="../v2.html" class="nav-link">Beranda</a>
+          <a
+            data-route="materials"
+            href="../materi/assets/views/daftar_materi.html"
+            class="nav-link"
+            >Materi</a
+          >
+          <a href="#" class="nav-link" id="nav-about" data-modal="about"
+            >Tentang</a
+          >
+        </nav>
       </div>
-      <div class="topbar-badges">
-        <span class="badge">💣 Bom = Nyawa -1</span>
-        <span class="badge">📄 Kertas = Kuis</span>
-        <span class="badge">⏱️ Timer</span>
-        <span class="badge">⏸️ P / ESC = Pause</span>
+    </header>
+
+    <!-- Modal: Tentang (About) -->
+    <div
+      class="modal-overlay"
+      id="aboutModal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="aboutTitle"
+    >
+      <div class="modal" role="document">
+        <button class="modal-close" id="aboutClose" aria-label="Tutup">
+          ×
+        </button>
+        <h2 id="aboutTitle">Tentang GreenMind Web</h2>
+
+        <div class="modal-tabs" role="tablist" aria-label="Tab Tentang">
+          <button
+            class="tab active"
+            data-tab="purpose"
+            role="tab"
+            aria-selected="true"
+          >
+            Tujuan
+          </button>
+          <button
+            class="tab"
+            data-tab="target"
+            role="tab"
+            aria-selected="false"
+          >
+            Target
+          </button>
+          <button class="tab" data-tab="hopes" role="tab" aria-selected="false">
+            Harapan
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="tab-panel" data-panel="purpose">
+            <p>
+              <strong>GreenMind Web</strong> adalah platform edukasi interaktif
+              yang dirancang untuk memperkenalkan konsep lingkungan dan Net Zero
+              dengan cara yang menyenangkan dan mudah dipahami. Melalui
+              kombinasi materi singkat, ilustrasi, kuis, dan permainan,
+              anak-anak belajar mengapa tindakan sederhana sehari-hari penting
+              bagi masa depan bumi.
+            </p>
+            <ul>
+              <li>
+                Menyajikan materi ringkas dan visual untuk memudahkan pemahaman.
+              </li>
+              <li>
+                Mendorong pengalaman belajar aktif melalui kuis dan game
+                edukasi.
+              </li>
+              <li>
+                Menghubungkan pengetahuan dengan tindakan nyata yang bisa
+                dilakukan sehari-hari.
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" data-panel="target" hidden>
+            <p>
+              Target utama kami adalah anak usia sekolah dasar hingga remaja,
+              serta pendidik dan orang tua yang mencari sumber belajar praktis
+              dan interaktif. Konten dibuat ramah usia, inklusif, dan mudah
+              disesuaikan untuk kegiatan belajar di kelas atau di rumah.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-panel="hopes" hidden>
+            <p>
+              Kami berharap setiap pengguna memperoleh pemahaman dasar tentang
+              langkah-langkah sederhana yang dapat mengurangi dampak lingkungan,
+              mengembangkan kebiasaan ramah lingkungan, dan terinspirasi untuk
+              membagikan pengetahuan ini di komunitasnya. Juga berharap materi
+              ini menjadi titik awal proyek sekolah dan diskusi keluarga yang
+              bermakna.
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn white" id="close2">Tutup</button>
+        </div>
       </div>
     </div>
-  </header>
 
-  <main class="game-wrap">
-    <section class="stage">
-      <canvas id="gameCanvas" width="800" height="480"></canvas>
-      <div class="stage-note">
-        <span>Kontrol: ⬅️➡️ / drag</span>
-        <span>Target: progress 100% sebelum waktu habis</span>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div>
+          <h1>♻️ Eco Catcher</h1>
+          <p class="subtitle">
+            Tangkap sampah untuk progress, hindari bom, jawab kuis dari kertas!
+          </p>
+        </div>
+        <div class="topbar-badges">
+          <span class="badge">💣 Bom = Nyawa -1</span>
+          <span class="badge">📄 Kertas = Kuis</span>
+          <span class="badge">⏱️ Timer</span>
+          <span class="badge">⏸️ Tombol Pause</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-wrap">
+      <section class="stage">
+        <canvas id="gameCanvas" width="800" height="480"></canvas>
+        <div class="stage-note">
+          <span>Kontrol: ⬅️➡️ / drag</span>
+          <span>Target: progress 100% sebelum waktu habis</span>
+        </div>
+      </section>
+
+      <aside class="hud">
+        <div class="panel">
+          <div class="rows">
+            <div class="row">
+              <span class="label">Skor</span
+              ><span id="score" class="value">0</span>
+            </div>
+            <div class="row">
+              <span class="label">Nyawa</span
+              ><span id="lives" class="value">❤️❤️❤️</span>
+            </div>
+            <div class="row">
+              <span class="label">Waktu</span
+              ><span id="timeText" class="value">60s</span>
+            </div>
+            <div class="row">
+              <span class="label">Level</span
+              ><span id="levelText" class="value">1 / 5</span>
+            </div>
+            <div class="row">
+              <span class="label">Soal</span>
+              <span id="quizCount" class="value">0 / 0</span>
+            </div>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress-head">
+              <span class="progress-label">Net Zero Progress</span>
+              <span id="progressValue" class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div
+                id="progressFill"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <p class="hint">Sampah jatuh tidak apa-apa ✅ (yang bahaya: bom)</p>
+          </div>
+
+          <div class="level-picker">
+            <label for="levelSelect">Pilih Level (dipakai saat mulai):</label>
+            <select id="levelSelect">
+              <option value="1">Level 1 (Santai)</option>
+              <option value="2">Level 2</option>
+              <option value="3">Level 3</option>
+              <option value="4">Level 4</option>
+              <option value="5">Level 5 (Sulit)</option>
+            </select>
+            <small>Dipakai saat start. Saat main, level tidak auto naik.</small>
+          </div>
+
+          <button id="btnPause" class="btn secondary" type="button">
+            ⏸️ Pause
+          </button>
+
+          <div class="rules">
+            <h3>Aturan Cepat</h3>
+            <ul>
+              <li>🗑️ Tangkap sampah → skor + progress</li>
+              <li>💣 Tangkap bom → nyawa -1</li>
+              <li>📄 Tangkap kertas → kuis (benar = bonus progress)</li>
+              <li>⏱️ Waktu habis: progress <b>100%</b> = kalah</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- OVERLAY (START + RESULT) -->
+    <section id="overlay" class="overlay show">
+      <div class="card">
+        <h2 id="overlayTitle">Selamat datang di Eco Catcher!</h2>
+        <p id="overlayDesc" class="lead">
+          Tangkap sampah untuk naik progress. Bom mengurangi nyawa. Kertas
+          memunculkan kuis.
+        </p>
+
+        <!-- START UI -->
+        <div id="startUI" class="start-level">
+          <div class="start-level-head">
+            <span class="start-level-title">Pilih Level</span>
+            <span class="start-level-badge">1–5</span>
+          </div>
+
+          <div class="start-level-select">
+            <select id="startLevel">
+              <option value="1">Level 1 (Santai)</option>
+              <option value="2">Level 2</option>
+              <option value="3">Level 3</option>
+              <option value="4">Level 4</option>
+              <option value="5">Level 5 (Sulit)</option>
+            </select>
+          </div>
+
+          <div class="start-level-note">
+            Level makin tinggi → timer makin cepat & bom makin sering.
+          </div>
+
+          <button id="btnStart" class="btn primary" type="button">
+            Mulai Game
+          </button>
+        </div>
+
+        <!-- RESULT UI -->
+        <div id="resultUI" class="result-ui" hidden>
+          <button id="btnRestart" class="btn primary" type="button">
+            Main Lagi
+          </button>
+        </div>
       </div>
     </section>
 
-    <aside class="hud">
-      <div class="panel">
-        <div class="rows">
-          <div class="row"><span class="label">Skor</span><span id="score" class="value">0</span></div>
-          <div class="row"><span class="label">Nyawa</span><span id="lives" class="value">❤️❤️❤️</span></div>
-          <div class="row"><span class="label">Waktu</span><span id="timeText" class="value">60s</span></div>
-          <div class="row"><span class="label">Level</span><span id="levelText" class="value">1 / 5</span></div>
-          <div class="row">
-  <span class="label">Soal</span>
-  <span id="quizCount" class="value">0 / 0</span>
-</div>
+    <!-- QUIZ OVERLAY -->
+    <section id="quizOverlay" class="overlay">
+      <div class="card quiz-card">
+        <div class="quiz-head">
+          <h2>📄 Kuis Singkat</h2>
+          <span class="quiz-tag">Net Zero</span>
+        </div>
+        <p id="quizQuestion" class="quiz-q"></p>
+        <div id="quizChoices" class="quiz-choices"></div>
+        <p id="quizInfo" class="quiz-info"></p>
+        <button id="quizNextBtn" class="btn primary" disabled type="button">
+          Lanjut
+        </button>
+        <p class="quiz-foot">Tips: Jawaban benar = bonus progress 🌱</p>
+      </div>
+    </section>
 
+    <!-- PAUSE OVERLAY -->
+    <section id="pauseOverlay" class="overlay">
+      <div class="card">
+        <h2>⏸️ Game Dipause</h2>
+        <p class="lead">
+          Tekan <b>P</b> / <b>ESC</b> atau klik tombol di kanan untuk lanjut.
+        </p>
+        <button id="btnResume" class="btn primary" type="button">
+          Lanjutkan
+        </button>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <strong>GreenMind Web</strong>
+          <p>
+            Platform belajar seru untuk anak-anak yang ingin menjaga bumi dan
+            masa depan lingkungan 🌍
+          </p>
         </div>
 
-        <div class="progress-wrap">
-          <div class="progress-head">
-            <span class="progress-label">Net Zero Progress</span>
-            <span id="progressValue" class="progress-value">0%</span>
-          </div>
-          <div class="progress-bar">
-            <div id="progressFill" class="progress-fill" style="width:0%"></div>
-          </div>
-          <p class="hint">Sampah jatuh tidak apa-apa ✅ (yang bahaya: bom)</p>
+        <!-- Links -->
+        <div class="footer-links">
+          <strong>Navigasi</strong>
+          <a href="../v2.html">Beranda</a>
+          <a
+            data-route="materials"
+            href="../materi/assets/views/daftar_materi.html"
+            >Materi</a
+          >
+          <a href="#" data-modal="about">Tentang</a>
+          <a href="game.html">Game Edukasi</a>
         </div>
 
-        <div class="level-picker">
-          <label for="levelSelect">Pilih Level (dipakai saat mulai):</label>
-          <select id="levelSelect">
-            <option value="1">Level 1 (Santai)</option>
-            <option value="2">Level 2</option>
-            <option value="3">Level 3</option>
-            <option value="4">Level 4</option>
-            <option value="5">Level 5 (Sulit)</option>
-          </select>
-          <small>Dipakai saat start. Saat main, level tidak auto naik.</small>
-        </div>
-
-        <button id="btnPause" class="btn secondary" type="button">⏸️ Pause</button>
-
-        <div class="rules">
-          <h3>Aturan Cepat</h3>
-          <ul>
-            <li>🗑️ Tangkap sampah → skor + progress</li>
-            <li>💣 Tangkap bom → nyawa -1</li>
-            <li>📄 Tangkap kertas → kuis (benar = bonus progress)</li>
-            <li>⏱️ Waktu habis: progress <b>100%</b> = kalah</li>
-          </ul>
+        <!-- Info -->
+        <div class="footer-info">
+          <strong>Dukung Kami</strong>
+          <p>Belajar bersama, bertindak bersama.</p>
+          <small>© 2025 GreenMind Web</small>
+          <small
+            >Made by
+            <a href="https://polmind.ac.id/" target="_blank"
+              >Politeknik Mitra Industri</a
+            ></small
+          >
         </div>
       </div>
-    </aside>
-  </main>
+    </footer>
 
-  <!-- OVERLAY (START + RESULT) -->
-  <section id="overlay" class="overlay show">
-    <div class="card">
-      <h2 id="overlayTitle">Selamat datang di Eco Catcher!</h2>
-      <p id="overlayDesc" class="lead">
-        Tangkap sampah untuk naik progress. Bom mengurangi nyawa. Kertas memunculkan kuis.
-      </p>
+    <script src="game.js"></script>
 
-      <!-- START UI -->
-      <div id="startUI" class="start-level">
-        <div class="start-level-head">
-          <span class="start-level-title">Pilih Level</span>
-          <span class="start-level-badge">1–5</span>
-        </div>
+    <!-- GSAP (used for modal animation). Fallback handled in script. -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 
-        <div class="start-level-select">
-          <select id="startLevel">
-            <option value="1">Level 1 (Santai)</option>
-            <option value="2">Level 2</option>
-            <option value="3">Level 3</option>
-            <option value="4">Level 4</option>
-            <option value="5">Level 5 (Sulit)</option>
-          </select>
-        </div>
+    <script>
+      (() => {
+        const toggle = document.querySelector(".nav-toggle");
+        const nav = document.querySelector(".main-nav");
 
-        <div class="start-level-note">
-          Level makin tinggi → timer makin cepat & bom makin sering.
-        </div>
+        if (toggle && nav) {
+          toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+          });
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        const triggers = Array.from(
+          document.querySelectorAll('[data-modal="about"]')
+        );
+        const modal = document.getElementById("aboutModal");
+        const closeBtn = document.getElementById("aboutClose");
+        const closeBtn2 = document.getElementById("close2");
+        const learnMore = document.getElementById("learnMore");
+        const tabs = Array.from(document.querySelectorAll(".modal-tabs .tab"));
+        const panels = Array.from(document.querySelectorAll(".tab-panel"));
 
-        <button id="btnStart" class="btn primary" type="button">Mulai Game</button>
-      </div>
+        if (!modal || !triggers.length) return;
 
-      <!-- RESULT UI -->
-      <div id="resultUI" class="result-ui" hidden>
-        <button id="btnRestart" class="btn primary" type="button">Main Lagi</button>
-      </div>
-    </div>
-  </section>
+        function openModal() {
+          modal.setAttribute("aria-hidden", "false");
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden";
+          const inner = modal.querySelector(".modal");
+          if (typeof gsap !== "undefined") {
+            gsap.fromTo(
+              inner,
+              { y: 24, opacity: 0, scale: 0.98 },
+              { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" }
+            );
+          } else {
+            inner.style.opacity = 1;
+            inner.style.transform = "translateY(0) scale(1)";
+          }
+          // focus first tabbable
+          setTimeout(() => {
+            const btn = modal.querySelector(".tab");
+            if (btn) btn.focus();
+          }, 250);
+          document.addEventListener("keydown", onKey);
+        }
 
-  <!-- QUIZ OVERLAY -->
-  <section id="quizOverlay" class="overlay">
-    <div class="card quiz-card">
-      <div class="quiz-head">
-        <h2>📄 Kuis Singkat</h2>
-        <span class="quiz-tag">Net Zero</span>
-      </div>
-      <p id="quizQuestion" class="quiz-q"></p>
-      <div id="quizChoices" class="quiz-choices"></div>
-      <p id="quizInfo" class="quiz-info"></p>
-      <button id="quizNextBtn" class="btn primary" disabled type="button">Lanjut</button>
-      <p class="quiz-foot">Tips: Jawaban benar = bonus progress 🌱</p>
-    </div>
-  </section>
+        function closeModal() {
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+          const inner = modal.querySelector(".modal");
+          if (typeof gsap !== "undefined") {
+            gsap.to(inner, {
+              y: 12,
+              opacity: 0,
+              scale: 0.98,
+              duration: 0.28,
+              ease: "power2.in",
+              onComplete() {
+                modal.style.display = "none";
+              },
+            });
+          } else {
+            modal.style.display = "none";
+          }
+          document.removeEventListener("keydown", onKey);
+        }
 
-  <!-- PAUSE OVERLAY -->
-  <section id="pauseOverlay" class="overlay">
-    <div class="card">
-      <h2>⏸️ Game Dipause</h2>
-      <p class="lead">Tekan <b>P</b> / <b>ESC</b> atau klik tombol di kanan untuk lanjut.</p>
-      <button id="btnResume" class="btn primary" type="button">Lanjutkan</button>
-    </div>
-  </section>
+        function onKey(e) {
+          if (e.key === "Escape") closeModal();
+          // simple Tab trap
+          if (e.key === "Tab") {
+            const focusables = modal.querySelectorAll(
+              'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
 
-  <footer class="footer">© 2025 Eco Catcher — GreenMind Web</footer>
-  <script src="game.js"></script>
-</body>
+        triggers.forEach((btn) => {
+          btn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            openModal();
+          });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+        if (closeBtn2) closeBtn2.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+
+        // Tabs interaksi
+        tabs.forEach((t) => {
+          t.addEventListener("click", () => {
+            const key = t.getAttribute("data-tab");
+            tabs.forEach((x) => {
+              x.classList.toggle("active", x === t);
+              x.setAttribute("aria-selected", x === t ? "true" : "false");
+            });
+            panels.forEach((p) => {
+              const show = p.getAttribute("data-panel") === key;
+              if (show) {
+                p.hidden = false;
+                gsap.fromTo(
+                  p,
+                  { y: 8, opacity: 0 },
+                  { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }
+                );
+              } else {
+                p.hidden = true;
+              }
+            });
+          });
+        });
+
+        learnMore &&
+          learnMore.addEventListener("click", () => {
+            // contoh: scroll ke bagian materi atau buka halaman baru
+            closeModal();
+            const el = document.querySelector('[data-route="materials"]');
+            if (el) el.click();
+          });
+      })();
+    </script>
+  </body>
 </html>
